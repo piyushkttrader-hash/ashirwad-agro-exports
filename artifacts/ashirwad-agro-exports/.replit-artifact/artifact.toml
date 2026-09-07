@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Ashirwad Agro Exports"
+description = "A premium, conversion-focused B2B export website for Ashirwad Agro Exports, helping Kenyan importers, distributors, food manufacturers, hospitality buyers, and commercial kitchens request quotations for bulk Indian food ingredients, dehydrated powders, and spices."
+version = "1.0.0"
+id = "artifacts/ashirwad-agro-exports"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23961
+
+[services.development]
+run = "pnpm --filter @workspace/ashirwad-agro-exports run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ashirwad-agro-exports", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ashirwad-agro-exports/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23961"
+BASE_PATH = "/"
