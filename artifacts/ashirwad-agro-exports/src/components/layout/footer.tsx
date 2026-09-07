@@ -12,9 +12,14 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2 mb-6">
-              <div className="h-10 w-10 bg-primary rounded-md flex items-center justify-center text-white font-serif font-bold text-xl leading-none">
-                A
-              </div>
+              <img
+                src={siteConfig.logo}
+                alt={`${siteConfig.name} logo`}
+                className="h-12 w-12 rounded-xl object-cover"
+                width="48"
+                height="48"
+                loading="lazy"
+              />
               <div className="flex flex-col">
                 <span className="font-serif font-bold text-lg leading-tight text-white">{siteConfig.shortName}</span>
                 <span className="text-[10px] uppercase tracking-wider text-muted/70 font-semibold">Agro Exports</span>

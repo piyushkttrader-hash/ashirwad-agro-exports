@@ -1,0 +1,60 @@
+ADD A PREMIUM "OUR ACHIEVEMENTS" SECTION TO THE ABOUT US PAGE
+
+Place this section below the Founder section.
+
+Design it as a premium international B2B agricultural export company achievement section.
+
+Heading:
+"Our Achievements"
+
+Subheading:
+"Building a Reliable Bridge Between Indian Agriculture and Global Markets"
+
+Create 4–6 elegant achievement cards with icons.
+
+IMPORTANT:
+Do NOT invent fake numbers, fake clients, fake export countries, fake certifications, awards, revenue figures or unsupported claims.
+
+For now, use achievement cards based only on information that is actually verified. If a specific number or achievement has not yet been provided, make the value editable through a central data/config file or use a neutral qualitative statement.
+
+Suggested achievement cards:
+
+1. Quality-Focused Sourcing
+"Carefully selected agricultural products sourced with a focus on consistent quality."
+
+2. B2B Export Focus
+"Focused on serving international importers, distributors, wholesalers and commercial buyers."
+
+3. Global Market Vision
+"Building long-term opportunities for Indian agricultural products in international markets."
+
+4. Reliable Supply Approach
+"Focused on dependable sourcing, professional communication and buyer-oriented supply solutions."
+
+5. Product Portfolio
+"Indian spices, spice powders, dehydrated products and selected agricultural products."
+
+6. Long-Term Partnerships
+"Committed to building transparent and lasting relationships with international B2B buyers."
+
+Add a premium visual element such as:
+- subtle world map
+- India-to-global-market connection
+- agricultural/product imagery
+- elegant animated counters ONLY when real verified numbers are available
+
+DO NOT show fake counters such as:
+"150+ Clients"
+"30+ Countries"
+"50+ Products"
+unless these numbers are verified and supplied by the company.
+
+Add a CTA at the bottom:
+"Partner With Us"
+
+Secondary CTA:
+"Request a Quote"
+
+The entire section must match the existing website's premium navy/white/green/gold visual style and be fully responsive on mobile.
+
+Also make all achievement text easy to edit later from one central configuration/data file.

@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "Ashirwad Agro Exports",
   shortName: "Ashirwad Agro",
+  logo: "/company-logo.webp",
   description: "Premium Indian Agricultural Products for Global Markets. B2B bulk supply of ingredients and spices.",
   contact: {
     email: "",
@@ -13,6 +14,44 @@ export const siteConfig = {
     poster: "/bulk-warehouse.jpg",
     src: "", // Placeholder for the actual ~40-second company export video
   },
+  founder: {
+    name: "Piyosh Kumar Tiwari",
+    title: "Founder",
+    image: "/founder-portrait.webp?v=2",
+    bio: "Piyosh Kumar Tiwari leads Ashirwad Agro Exports with a vision of connecting Indian agricultural products with international B2B opportunities. His approach emphasizes clear communication and careful discussion of each buyer's commercial requirements."
+  },
+  achievements: [
+    {
+      id: "quality-sourcing",
+      title: "Quality-Focused Sourcing Approach",
+      description: "Dedicated to discussing and aligning with buyer-specific quality parameters."
+    },
+    {
+      id: "b2b-focus",
+      title: "International B2B Focus",
+      description: "Focused entirely on serving international importers, distributors, wholesalers, and commercial buyers."
+    },
+    {
+      id: "global-vision",
+      title: "Global Market Vision",
+      description: "Building long-term opportunities for Indian agricultural products in international markets."
+    },
+    {
+      id: "buyer-alignment",
+      title: "Buyer Requirement Alignment",
+      description: "Centering operations around professional communication and buyer-oriented supply solutions."
+    },
+    {
+      id: "product-portfolio",
+      title: "Product Portfolio",
+      description: "Offering Indian spices, spice powders, dehydrated products, and selected agricultural ingredients."
+    },
+    {
+      id: "long-term-relationships",
+      title: "Long-Term Relationship Focus",
+      description: "Committed to building transparent and lasting relationships with international B2B buyers."
+    }
+  ],
   products: [
     {
       id: "onion-powder",

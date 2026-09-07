@@ -72,9 +72,13 @@ export function Navbar() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2" data-testid="link-logo">
-            <div className="h-10 w-10 bg-primary rounded-md flex items-center justify-center text-white font-serif font-bold text-xl leading-none">
-              A
-            </div>
+            <img
+              src={siteConfig.logo}
+              alt={`${siteConfig.name} logo`}
+              className="h-12 w-12 rounded-xl object-cover shadow-sm"
+              width="48"
+              height="48"
+            />
             <div className="flex flex-col">
               <span className="font-serif font-bold text-lg leading-tight text-foreground">{siteConfig.shortName}</span>
               <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-semibold">Agro Exports</span>
