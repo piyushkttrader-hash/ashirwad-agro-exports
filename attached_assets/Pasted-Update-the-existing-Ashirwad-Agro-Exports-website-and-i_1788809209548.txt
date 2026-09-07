@@ -1,0 +1,108 @@
+Update the existing Ashirwad Agro Exports website and integrate the uploaded 40-second export video into the Home page.
+
+IMPORTANT:
+- Do NOT redesign or rebuild the website from scratch.
+- Keep the existing website structure, branding, logo, colors, navigation, products and content.
+- Use the uploaded video file that is already available in the Replit project.
+- First locate the uploaded video file in the project and use that exact file.
+- Do not generate a replacement video or use an external stock-video URL.
+
+VIDEO INTEGRATION:
+Place the 40-second video as a subtle background video in the main Home page intro/hero section.
+
+Design requirements:
+1. The video must play behind the hero content as a full-width background.
+2. The video should be slightly blurred/softened so it feels premium and does not distract from the website content.
+3. Use a very subtle blur, approximately 2–4px.
+4. Apply a dark/semi-transparent overlay over the video to maintain excellent text readability.
+5. Keep the video itself clean — DO NOT add text, captions, subtitles or graphics inside the video.
+6. Existing hero text and CTA buttons should remain crisp and clearly readable above the video.
+7. Use object-fit: cover so the video fills the entire hero area without distortion.
+8. Use a slight scale (around 1.02–1.04) when applying blur so there are no blurred edges/gaps.
+9. The video should autoplay silently, loop continuously and be muted.
+10. Do not autoplay with sound.
+11. Do not show video controls in the normal hero view.
+12. Respect browser autoplay policies by using muted + playsInline.
+13. Add a graceful fallback poster/image using the existing hero image if the video cannot load or autoplay.
+14. On mobile devices, maintain a professional crop and do not allow the video to make the page layout unstable.
+15. Do not allow the video to significantly increase page load time.
+16. Use preload="metadata" or another performance-friendly approach and lazy-load where appropriate.
+17. Make sure the video does not block the initial rendering of the homepage.
+18. Maintain accessibility and readable contrast.
+
+HERO CONTENT:
+Keep the existing homepage messaging and CTA structure, but make sure the content works visually over the video.
+
+Preferred main headline:
+"Premium Indian Agricultural Products for Global Markets"
+
+Supporting text:
+"Reliable sourcing, quality-focused supply and professional export solutions for international B2B buyers."
+
+Primary CTA:
+"Request a Quote"
+
+Secondary CTA:
+"WhatsApp Us"
+
+The hero should communicate:
+- Indian agricultural products
+- spices and powders
+- professional B2B supply
+- international export
+- reliability and quality
+
+VISUAL STYLE:
+- Premium international B2B export company
+- Clean and sophisticated
+- Dark navy/blue + white branding
+- Modern typography
+- Strong spacing
+- Subtle animations only
+- No flashy effects
+- No excessive gradients
+- No cheap/template-like appearance
+- The video should feel like a premium cinematic background rather than a normal embedded video.
+
+IMPORTANT UX:
+The background video should remain visually secondary to the headline and CTA.
+The user must immediately understand that Ashirwad Agro Exports is an Indian B2B agricultural products exporter.
+
+Do not add a separate video player with large controls in the hero.
+Do not put a play button over the hero unless technically necessary.
+Do not add text into the video file itself.
+
+RESPONSIVE:
+Test the hero on:
+- Desktop
+- Tablet
+- Android mobile
+
+Make sure:
+- No horizontal scrolling
+- No layout shift
+- Text remains readable
+- CTA buttons remain easily tappable
+- Video does not cover or interfere with navigation
+- Hero height looks premium on mobile
+
+SEO:
+Keep the actual hero headline and supporting text as HTML text, not part of the video.
+Add an appropriate accessible video description/aria-label if applicable.
+Do not hide important SEO content inside the video.
+
+IMPLEMENTATION:
+Use the existing project's framework and coding style.
+Create reusable/configurable video settings so the video file can easily be replaced in the future without changing the hero component.
+
+After implementation:
+1. Verify the video loads correctly.
+2. Verify autoplay + muted + loop works.
+3. Verify the fallback image works.
+4. Verify the hero text remains readable.
+5. Verify mobile responsiveness.
+6. Verify there are no console errors.
+7. Verify existing navigation, CTA buttons, WhatsApp buttons and quote form still work.
+8. Do not break any existing website functionality.
+
+Do not make unrelated changes to the website.

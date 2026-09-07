@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import { ArrowRight, Globe2, Package, ShieldCheck, TrendingUp, Play, FileText, Settings, Handshake, MapPin } from 'lucide-react';
+import { ArrowRight, Globe2, Package, ShieldCheck, TrendingUp, FileText, Settings, Handshake, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useSEO } from '@/hooks/use-seo';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
@@ -42,13 +42,30 @@ export default function Home() {
     <div className="w-full overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center pt-20 pb-24 md:pt-0 md:pb-0 bg-secondary">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/hero-spices.jpg" 
-            alt="Premium Indian agricultural products" 
-            className="w-full h-full object-cover object-center opacity-40 mix-blend-overlay"
+        <div className="absolute inset-0 z-0 overflow-hidden bg-secondary">
+          <img
+            src={siteConfig.video.poster}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 via-secondary/80 to-transparent"></div>
+          <video
+            src={siteConfig.video.src}
+            poster={siteConfig.video.poster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label="Agricultural sourcing, processing, packaging and export logistics"
+            className="absolute inset-0 h-full w-full object-cover object-center motion-reduce:hidden"
+            style={{
+              filter: `blur(${siteConfig.video.blurPx}px)`,
+              transform: `scale(${siteConfig.video.scale})`,
+            }}
+          />
+          <div className="absolute inset-0 bg-secondary/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 via-secondary/70 to-secondary/45"></div>
         </div>
         
         <div className="container relative z-10 mx-auto px-4 md:px-8">
@@ -78,51 +95,6 @@ export default function Home() {
                 </Button>
               </a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video Section */}
-      <section className="py-24 bg-background">
-        <div className="container mx-auto px-4 md:px-8 max-w-5xl text-center reveal">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-foreground">From India to Global Markets</h2>
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Explore our approach to sourcing, preparing and supplying Indian agricultural products for international B2B buyers.
-          </p>
-          
-          <div className="relative aspect-video rounded-2xl overflow-hidden bg-muted border shadow-lg group">
-            {siteConfig.video.src ? (
-              <video 
-                src={siteConfig.video.src} 
-                poster={siteConfig.video.poster}
-                controls
-                muted
-                playsInline
-                preload="metadata"
-                aria-label="Ashirwad Agro Exports promotional export video"
-                className="w-full h-full object-cover"
-              >
-                Your browser does not support the video tag.
-              </video>
-            ) : (
-              <>
-                <img 
-                  src={siteConfig.video.poster} 
-                  alt="Export operations placeholder" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-secondary/40 flex items-center justify-center">
-                  <div className="h-20 w-20 rounded-full bg-primary text-white flex items-center justify-center shadow-xl cursor-pointer hover:scale-110 transition-transform">
-                    <Play className="h-8 w-8 ml-1" />
-                  </div>
-                </div>
-                <div className="absolute bottom-4 left-0 right-0 text-center">
-                  <span className="bg-background/90 text-foreground text-xs font-semibold px-3 py-1 rounded-md backdrop-blur-sm">
-                    Awaiting genuine ~40-second company export video
-                  </span>
-                </div>
-              </>
-            )}
           </div>
         </div>
       </section>

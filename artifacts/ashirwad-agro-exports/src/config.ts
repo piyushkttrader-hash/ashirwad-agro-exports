@@ -17,8 +17,10 @@ export const siteConfig = {
     directBusinessMessage: "Hello, I would like to discuss a specific business requirement with Ashirwad Agro Exports. I have a custom proposal/deal to discuss.",
   },
   video: {
-    poster: "/video/ashirwad-export-poster.webp",
+    poster: "/hero-spices.jpg",
     src: "/video/ashirwad-export-film.mp4",
+    blurPx: 3,
+    scale: 1.03,
   },
   founder: {
     name: "Piyosh Kumar Tiwari",
