@@ -57,19 +57,22 @@ export default function Home() {
             loop
             playsInline
             preload="metadata"
-            aria-label="Agricultural sourcing, processing, packaging and export logistics"
+            aria-label="Illustrative promotional footage of agriculture, processing, packaging and export logistics"
             className="absolute inset-0 h-full w-full object-cover object-center motion-reduce:hidden"
             style={{
               filter: `blur(${siteConfig.video.blurPx}px)`,
               transform: `scale(${siteConfig.video.scale})`,
             }}
           />
-          <div className="absolute inset-0 bg-secondary/70"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-secondary/90 via-secondary/70 to-secondary/45"></div>
+          <div className="absolute inset-0 bg-secondary/45"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-secondary/55 via-secondary/35 to-secondary/25"></div>
         </div>
         
         <div className="container relative z-10 mx-auto px-4 md:px-8">
-          <div className="max-w-3xl reveal">
+          <p className="sr-only">
+            This is illustrative promotional footage and does not represent company-owned facilities, employees, customers or shipments.
+          </p>
+          <div className="max-w-3xl rounded-2xl border border-white/10 bg-secondary/90 p-6 shadow-2xl backdrop-blur-sm sm:p-8 md:p-10 reveal">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white leading-[1.15] mb-6">
               Premium Indian Agricultural Products for Global Markets
             </h1>

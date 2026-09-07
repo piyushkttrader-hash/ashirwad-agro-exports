@@ -1,0 +1,76 @@
+Integrate the uploaded 40-second video into the Ashirwad Agro Exports website.
+
+IMPORTANT:
+- The uploaded video file is already present in the project. Use that exact uploaded video file.
+- Do not replace, regenerate, or modify the video content.
+- The video is a generic professional agricultural/spice/export stock-style video and must NOT be presented as our actual factory, warehouse, employees, customers, or shipments.
+
+HOMEPAGE VIDEO INTRO:
+Create a premium full-width video background section near the top of the homepage, immediately after the main navigation/header and before the main product/trust sections.
+
+Design requirements:
+1. Use the uploaded 40-second video as the background.
+2. The video should autoplay silently, loop continuously, and be muted.
+3. It must play automatically without requiring the visitor to click.
+4. Add playsInline for mobile devices.
+5. Do not show normal video controls.
+6. Use object-fit: cover so the video fills the section properly on desktop and mobile.
+7. Add a subtle dark/black transparent overlay over the video so the website content remains readable.
+8. Keep the video slightly visually soft/subtle rather than overly sharp or distracting.
+9. Do NOT add large text directly over the video.
+10. Keep the section premium, clean, minimal and suitable for an international B2B agricultural export company.
+11. Maintain excellent mobile responsiveness.
+12. Make sure the video does not cause horizontal scrolling or layout problems.
+13. Optimize loading performance:
+   - lazy-load/preload appropriately
+   - do not block the initial page rendering
+   - use the correct video MIME/type
+   - avoid unnecessary duplicate video downloads
+14. Respect prefers-reduced-motion:
+   - if a visitor has reduced motion enabled, show a suitable poster/static background instead of automatically playing the video.
+
+IMPORTANT WEBSITE STRUCTURE:
+The video should support the homepage introduction, not replace the main hero content.
+
+Place a concise business message/hero content over or immediately adjacent to the video, using this wording:
+
+"Premium Indian Agricultural Products for Global Markets"
+
+"Reliable sourcing, quality-focused supply and professional export solutions for international B2B buyers."
+
+Primary CTA:
+"Request a Quote"
+
+Secondary CTA:
+"WhatsApp Us"
+
+The video should visually communicate:
+Indian agriculture → spices/products → processing/quality → packaging/bulk supply → international shipping/export.
+
+DESIGN:
+- Premium international B2B export look
+- Navy/white visual language matching the existing website
+- Clean typography
+- Elegant spacing
+- Subtle animation only
+- No flashy effects
+- No generic AI-looking UI
+- No unnecessary text over the video
+
+FUNCTIONALITY:
+- Existing website navigation must remain unchanged.
+- Existing product pages and product enquiry buttons must remain functional.
+- Existing WhatsApp integration must remain unchanged.
+- Do not break existing responsive layouts.
+- Do not remove existing sections.
+
+After implementation:
+1. Verify the uploaded video is actually being loaded from the project asset.
+2. Verify autoplay + muted + loop + playsInline work.
+3. Verify desktop and mobile layouts.
+4. Verify there are no console errors.
+5. Verify TypeScript/build validation passes.
+6. If the video filename/path needs to be adjusted, determine the correct project path automatically rather than asking me to rename the file.
+7. Do not make unrelated design changes.
+
+First inspect the existing homepage structure and then implement this integration cleanly within the existing design system.
