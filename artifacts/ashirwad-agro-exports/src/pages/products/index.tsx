@@ -57,8 +57,13 @@ export default function Products() {
                       </div>
                     </div>
                     
+                    <div className="mb-6 flex-1">
+                      <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-1">Packaging</h4>
+                      <p className="text-xs text-foreground/80">{product.packaging}</p>
+                    </div>
+                    
                     <div className="flex items-center text-primary font-semibold mt-auto pt-4 border-t border-border/50">
-                      View Specifications <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      View Product Details <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
                 </Link>

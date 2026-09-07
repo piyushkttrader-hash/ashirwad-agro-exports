@@ -24,11 +24,13 @@ export function Navbar() {
 
   const navLinks = [
     { href: '/', label: 'Home' },
+    { href: '/about', label: 'About Us' },
     { href: '/products', label: 'Products' },
-    { href: '/bulk-export', label: 'Bulk Supply' },
-    { href: '/kenya', label: 'Kenya Exports' },
-    { href: '/why-us', label: 'Why Us' },
-    { href: '/about', label: 'About' },
+    { href: '/why-us', label: 'Why Choose Us' },
+    { href: '/how-it-works', label: 'How It Works' },
+    { href: '/payment-terms', label: 'Payment Terms' },
+    { href: '/terms', label: 'Terms & Conditions' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -60,7 +62,7 @@ export function Navbar() {
           )}
         </div>
         <div>
-          Reliable B2B Export Partner - India to Kenya
+          Premium Indian Agricultural Products for Global Markets
         </div>
       </div>
 

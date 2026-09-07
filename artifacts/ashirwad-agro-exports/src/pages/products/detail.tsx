@@ -14,8 +14,8 @@ export default function ProductDetail() {
   const product = siteConfig.products.find(p => p.slug === slug);
 
   useSEO({
-    title: product ? `${product.name} Bulk Supplier for Kenya` : "Product Not Found",
-    description: product ? `Bulk supply of ${product.name.toLowerCase()} for commercial buyers in Kenya. Request a B2B quote for export pricing and packaging options.` : "",
+    title: product ? `${product.name} Bulk Supplier` : "Product Not Found",
+    description: product ? `Bulk supply of ${product.name.toLowerCase()} for commercial buyers. Request a B2B quote for export pricing and packaging options.` : "",
     canonical: product ? `/products/${product.slug}` : undefined
   });
 
@@ -93,10 +93,19 @@ export default function ProductDetail() {
 
               <div>
                 <h3 className="text-lg font-bold mb-4 flex items-center border-b pb-2">
-                  Packaging & Specifications
+                  Specifications
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Packaging and specifications can be discussed and customized according to buyer requirements. We accommodate standard bulk export packaging including PP bags, multi-wall paper bags, or custom bulk containers suitable for sea freight to Kenya.
+                  {product.specifications}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-lg font-bold mb-4 flex items-center border-b pb-2">
+                  Packaging & Logistics
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {product.packaging}
                 </p>
               </div>
             </div>

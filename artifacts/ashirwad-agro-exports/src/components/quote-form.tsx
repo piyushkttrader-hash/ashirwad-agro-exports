@@ -20,6 +20,7 @@ const quoteFormSchema = z.object({
   productInterest: z.string().min(1, "Please select a product"),
   requiredQuantity: z.string().min(1, "Required quantity is needed"),
   packaging: z.string().min(1, "Packaging requirement is needed"),
+  targetPrice: z.string().optional(),
   deliveryLocation: z.string().min(2, "Delivery location is required"),
   message: z.string().optional(),
   honeypot: z.string().max(0, "Spam detected"), // simple honeypot
@@ -47,6 +48,7 @@ export function QuoteForm({ preselectedProduct, className = "" }: QuoteFormProps
       productInterest: preselectedProduct || "",
       requiredQuantity: "",
       packaging: "",
+      targetPrice: "",
       deliveryLocation: "",
       message: "",
       honeypot: "",
@@ -150,7 +152,7 @@ export function QuoteForm({ preselectedProduct, className = "" }: QuoteFormProps
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Country *</FormLabel>
-                <FormControl><Input {...field} /></FormControl>
+                <FormControl><Input placeholder="e.g. Kenya, UAE, UK" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -161,7 +163,7 @@ export function QuoteForm({ preselectedProduct, className = "" }: QuoteFormProps
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Delivery City/Port *</FormLabel>
-                <FormControl><Input placeholder="e.g. Mombasa, Nairobi" {...field} /></FormControl>
+                <FormControl><Input placeholder="e.g. Mombasa, Dubai" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -192,7 +194,7 @@ export function QuoteForm({ preselectedProduct, className = "" }: QuoteFormProps
           )}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <FormField
             control={form.control}
             name="requiredQuantity"
@@ -211,6 +213,17 @@ export function QuoteForm({ preselectedProduct, className = "" }: QuoteFormProps
               <FormItem>
                 <FormLabel>Packaging Requirement *</FormLabel>
                 <FormControl><Input placeholder="e.g. 25kg PP bags, Custom" {...field} /></FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="targetPrice"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Target Price (Optional)</FormLabel>
+                <FormControl><Input placeholder="Optional target price or budget guidance" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}

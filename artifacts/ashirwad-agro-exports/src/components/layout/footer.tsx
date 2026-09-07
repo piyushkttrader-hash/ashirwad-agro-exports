@@ -30,10 +30,12 @@ export function Footer() {
             <h4 className="font-serif font-bold text-lg text-white mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li><Link href="/" className="text-sm hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="/products" className="text-sm hover:text-primary transition-colors">Products</Link></li>
-              <li><Link href="/kenya" className="text-sm hover:text-primary transition-colors">Kenya Exports</Link></li>
-              <li><Link href="/bulk-export" className="text-sm hover:text-primary transition-colors">Bulk Supply</Link></li>
               <li><Link href="/about" className="text-sm hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link href="/products" className="text-sm hover:text-primary transition-colors">Products</Link></li>
+              <li><Link href="/why-us" className="text-sm hover:text-primary transition-colors">Why Choose Us</Link></li>
+              <li><Link href="/how-it-works" className="text-sm hover:text-primary transition-colors">How It Works</Link></li>
+              <li><Link href="/payment-terms" className="text-sm hover:text-primary transition-colors">Payment Terms</Link></li>
+              <li><Link href="/kenya" className="text-sm hover:text-primary transition-colors">Kenya Exports</Link></li>
             </ul>
           </div>
 

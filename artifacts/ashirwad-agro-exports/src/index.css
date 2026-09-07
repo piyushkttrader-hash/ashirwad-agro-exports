@@ -57,40 +57,40 @@
   --elevate-1: rgba(0, 0, 0, 0.03);
   --elevate-2: rgba(0, 0, 0, 0.08);
 
-  /* Background: clean off-white */
-  --background: 40 33% 98%;
-  --foreground: 20 20% 15%;
-  --border: 40 15% 90%;
+  /* Background: clean very light blue/white */
+  --background: 210 40% 98%;
+  --foreground: 220 50% 15%;
+  --border: 214 32% 91%;
 
   --card: 0 0% 100%;
-  --card-foreground: 20 20% 15%;
-  --card-border: 40 15% 90%;
+  --card-foreground: 220 50% 15%;
+  --card-border: 214 32% 91%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 20 20% 15%;
-  --popover-border: 40 15% 90%;
+  --popover-foreground: 220 50% 15%;
+  --popover-border: 214 32% 91%;
 
-  /* Primary: Deep Spice Orange */
-  --primary: 22 80% 45%;
+  /* Primary: Strong Blue for CTAs */
+  --primary: 221 83% 53%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Deep Agro Green */
-  --secondary: 150 30% 25%;
+  /* Secondary: Deep Navy / Dark Blue */
+  --secondary: 222 47% 25%;
   --secondary-foreground: 0 0% 100%;
 
-  /* Muted: Soft sand */
-  --muted: 40 20% 94%;
-  --muted-foreground: 20 10% 40%;
+  /* Muted: Light Blue */
+  --muted: 210 40% 92%;
+  --muted-foreground: 215 25% 40%;
 
-  /* Accent: Golden Turmeric */
-  --accent: 40 90% 55%;
-  --accent-foreground: 20 20% 15%;
+  /* Accent: Royal/Medium Blue */
+  --accent: 217 65% 50%;
+  --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 40 15% 85%;
-  --ring: 22 80% 45%;
+  --input: 214 32% 85%;
+  --ring: 221 83% 53%;
 
   --app-font-sans: 'Plus Jakarta Sans', sans-serif;
   --app-font-serif: 'Playfair Display', serif;

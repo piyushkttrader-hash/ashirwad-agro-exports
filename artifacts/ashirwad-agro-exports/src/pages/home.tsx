@@ -7,8 +7,8 @@ import { siteConfig } from '@/config';
 
 export default function Home() {
   useSEO({
-    title: "Food Ingredient & Spice Supplier for Kenya",
-    description: "Reliable Indian B2B bulk supplier of onion powder, garlic powder, coriander powder and selected spices for Kenyan importers and commercial buyers.",
+    title: "Premium Indian Agricultural Products for Global Markets",
+    description: "Reliable Indian B2B bulk supplier of food ingredients, spice powders, and agricultural products for international importers and commercial buyers.",
     canonical: "/"
   });
   useScrollReveal();
@@ -16,7 +16,7 @@ export default function Home() {
   const features = [
     {
       title: "B2B Bulk Supply",
-      description: "Capable of handling FCL and LCL shipments customized for large-scale commercial buyers in Kenya.",
+      description: "Capable of handling FCL and LCL shipments customized for large-scale commercial buyers.",
       icon: Package
     },
     {
@@ -53,15 +53,15 @@ export default function Home() {
           <div className="max-w-3xl reveal">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6">
               <span className="h-2 w-2 rounded-full bg-primary"></span>
-              Exporting from India to Kenya
+              Exporting from India Worldwide
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-foreground leading-[1.1] mb-6">
-              Reliable Indian Food Ingredient & Spice Supplier for Kenya
+              Premium Indian Agricultural Products for Global Markets
             </h1>
             
             <p className="text-lg md:text-xl text-foreground/80 mb-10 max-w-2xl leading-relaxed">
-              Bulk supply of onion powder, garlic powder, coriander powder, moringa powder and selected spices for Kenyan importers, distributors and commercial buyers.
+              Bulk supply of food ingredients, dehydrated vegetable powders, and spices for international importers, distributors, and commercial buyers.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -95,7 +95,7 @@ export default function Home() {
           <div className="text-center max-w-3xl mx-auto mb-16 reveal">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Built for Commercial Buyers</h2>
             <p className="text-lg text-muted-foreground">
-              We understand the complexities of international trade. Our operations are streamlined to provide Kenyan buyers with reliable, continuous supply without the usual sourcing friction.
+              We understand the complexities of international trade. Our operations are streamlined to provide global buyers with reliable, continuous supply without the usual sourcing friction.
             </p>
           </div>
           
@@ -166,7 +166,7 @@ export default function Home() {
         <div className="container relative z-10 mx-auto px-4 md:px-8 text-center max-w-4xl reveal">
           <h2 className="text-3xl md:text-5xl font-serif font-bold mb-8 text-white">Ready to Discuss Your Import Requirements?</h2>
           <p className="text-lg md:text-xl text-primary-foreground/90 mb-10">
-            Contact our commercial team today to receive a competitive quotation tailored to your volume and packaging needs in Kenya.
+            Contact our commercial team today to receive a competitive quotation tailored to your volume, destination, and packaging needs.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/contact">

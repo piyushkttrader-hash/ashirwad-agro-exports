@@ -14,6 +14,8 @@ import Products from '@/pages/products';
 import ProductDetail from '@/pages/products/detail';
 import Kenya from '@/pages/kenya';
 import BulkExport from '@/pages/bulk-export';
+import HowItWorks from '@/pages/how-it-works';
+import PaymentTerms from '@/pages/payment-terms';
 import WhyUs from '@/pages/why-us';
 import About from '@/pages/about';
 import Contact from '@/pages/contact';
@@ -42,6 +44,8 @@ function Router() {
             <Route path="/products/:slug" component={ProductDetail} />
             <Route path="/kenya" component={Kenya} />
             <Route path="/bulk-export" component={BulkExport} />
+            <Route path="/how-it-works" component={HowItWorks} />
+            <Route path="/payment-terms" component={PaymentTerms} />
             <Route path="/why-us" component={WhyUs} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />

@@ -82,12 +82,12 @@ export default function WhyUs() {
               </div>
             </div>
             <div className="order-1 lg:order-2 reveal">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Consistent Supply for Your Business</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">Understanding Commercial Requirements</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                When you import ingredients for manufacturing or wholesale distribution, reliable supply is paramount. Changes in supply availability can disrupt your entire production line.
+                When sourcing ingredients for manufacturing or wholesale distribution, having clear alignment on product parameters and logistics is important. Identifying the right specifications ensures your production or distribution can proceed as planned.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We understand this commercial reality. Our operations are designed to deliver according to your requirements shipment after shipment, providing the stability your business requires.
+                We center our operations on understanding your specific commercial reality. Our approach is to discuss and align with your exact requirements for every order, focusing on clear communication and transparency.
               </p>
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function WhyUs() {
       {/* CTA */}
       <section className="py-20 text-center bg-background">
         <div className="container mx-auto px-4 md:px-8 max-w-2xl reveal">
-          <h2 className="text-2xl font-bold mb-8">Ready to secure a reliable supply chain?</h2>
+          <h2 className="text-2xl font-bold mb-8">Ready to discuss your supply requirements?</h2>
           <Link href="/contact">
             <Button size="lg" className="h-14 px-10 text-lg font-bold">
               Contact Our Sales Team

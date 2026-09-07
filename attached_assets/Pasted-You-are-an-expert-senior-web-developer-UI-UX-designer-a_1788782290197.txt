@@ -1,0 +1,189 @@
+You are an expert senior web developer, UI/UX designer and B2B export website specialist.
+
+Build/refine my existing website as a professional B2B Indian agricultural products export website.
+
+IMPORTANT:
+I have provided screenshots of the website design I selected (Design 5). Use those screenshots as the primary visual reference for the overall look and feel.
+
+The website must NOT look like a generic template. It should look like a genuine, trustworthy Indian agricultural export company website designed for international buyers.
+
+==================================================
+1. DESIGN & VISUAL STYLE
+==================================================
+
+Use the Design 5 screenshots as the visual direction.
+
+Overall style:
+- Premium
+- Clean
+- Modern
+- Professional
+- International B2B
+- Trustworthy
+- Agricultural/export focused
+- Mobile-first
+- Spacious and easy to read
+
+Color direction:
+- Deep navy / dark blue sections
+- Royal/medium blue accent cards
+- Light blue/very light backgrounds
+- White typography on dark sections
+- Strong blue CTA buttons
+- Green can be used carefully for WhatsApp/contact elements
+- Maintain excellent contrast and readability
+
+Use:
+- Large professional headings
+- Clean modern typography
+- Rounded cards where appropriate
+- Generous spacing
+- Subtle borders
+- Professional product imagery
+- Smooth but restrained animations
+- Consistent section spacing
+
+Do NOT overuse animations, gradients, shadows or decorative effects.
+
+==================================================
+2. WEBSITE PURPOSE
+==================================================
+
+The website is primarily for B2B international buyers looking to source Indian agricultural products.
+
+The main goal is:
+1. Showcase our products
+2. Establish credibility
+3. Explain our sourcing/export process
+4. Make international buyers contact us easily
+5. Generate genuine bulk/export enquiries
+6. Clearly communicate payment and business terms
+
+This is NOT an e-commerce website with a normal retail shopping cart.
+
+The primary CTA should be:
+- Request a Quote
+- Send Enquiry
+- Contact Us
+- WhatsApp Us
+
+For products, buyers should be able to enquire about:
+- Product
+- Quantity
+- Packaging requirement
+- Destination country
+- Required specifications
+- Target price, if applicable
+
+==================================================
+3. PRODUCTS
+==================================================
+
+Create a professional Products section/catalogue.
+
+Our key products include:
+
+- Onion Powder
+- Garlic Powder
+- Coriander Powder
+- Moringa Powder
+- Spice Powders
+- Masala / Spice Blends
+
+The product catalogue should be easy to expand later.
+
+Each product card should contain:
+- Professional product image
+- Product name
+- Short description
+- Key specifications
+- Available packaging
+- Bulk enquiry CTA
+- "Request a Quote" button
+
+Do NOT display fake specifications, certifications, grades, organic claims or laboratory values.
+
+If information is not provided, create editable placeholders in the admin/content structure rather than inventing facts.
+
+==================================================
+4. HOMEPAGE STRUCTURE
+==================================================
+
+Create a strong homepage with this structure:
+
+HEADER
+- Company logo/name
+- Home
+- About Us
+- Products
+- Why Choose Us
+- How It Works
+- Payment Terms
+- Terms & Conditions
+- Contact
+- prominent Request a Quote button
+
+HERO SECTION
+Headline focused on:
+"Premium Indian Agricultural Products for Global Markets"
+
+Supporting text should communicate:
+- Indian sourcing
+- Quality-focused supply
+- Bulk/B2B requirements
+- Export-oriented service
+
+CTA:
+"Request a Quote"
+"WhatsApp Us"
+
+Use a premium agricultural/export image.
+
+Do not make unsupported claims such as "No.1 exporter", "100% guaranteed", etc.
+
+==================================================
+5. WHY CHOOSE US
+==================================================
+
+Create professional feature cards similar to the Design 5 style.
+
+Possible headings:
+
+- Quality-Focused Sourcing
+- Competitive Pricing
+- Reliable Supply
+- Export-Ready Packaging
+- Clear Communication
+- Buyer-Focused Service
+
+Each card should have a short professional explanation.
+
+Do not use fabricated statistics.
+
+==================================================
+6. HOW IT WORKS
+==================================================
+
+Use a clean step-by-step section inspired by the screenshots.
+
+Example:
+
+01. Share Your Requirement
+Tell us the product, quantity, specifications and destination.
+
+02. Receive Our Quotation
+We review your requirement and provide pricing and commercial details.
+
+03. Confirm Specifications
+Product quality, packaging, quantity and shipment terms are finalized.
+
+04. Payment & Order Processing
+Payment terms are agreed and the order moves into processing.
+
+05. Packaging & Dispatch
+Products are packed according to the agreed requirements and prepared for dispatch.
+
+06. Shipment & Documentation
+Required export/shipping documentation is prepared as applicable.
+
+Make
