@@ -9,6 +9,10 @@ export const siteConfig = {
     whatsappDisplay: "",
     address: "",
   },
+  video: {
+    poster: "/bulk-warehouse.jpg",
+    src: "", // Placeholder for the actual ~40-second company export video
+  },
   products: [
     {
       id: "onion-powder",

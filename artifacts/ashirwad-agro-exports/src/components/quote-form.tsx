@@ -201,7 +201,7 @@ export function QuoteForm({ preselectedProduct, className = "" }: QuoteFormProps
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Required Quantity *</FormLabel>
-                <FormControl><Input placeholder="e.g. 500 KG, 1 FCL" {...field} /></FormControl>
+                <FormControl><Input placeholder="e.g. 500 kg or your expected order quantity" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}

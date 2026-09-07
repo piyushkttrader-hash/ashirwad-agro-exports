@@ -1,0 +1,87 @@
+Update the homepage HERO / INTRO section.
+
+IMPORTANT:
+I want the introduction to be IMAGE-FIRST visually, followed by a REAL 40-second export video.
+
+Do NOT make the entire hero section just text.
+
+HERO STRUCTURE:
+
+1. Start with a large, premium, high-quality hero IMAGE.
+The image should immediately communicate:
+- Indian spices
+- Agricultural products
+- Professional food ingredients
+- Export/business environment
+- International B2B supply
+
+The image should occupy a strong visual area and look premium and realistic.
+
+Place the main headline and CTA naturally over or beside the hero image depending on screen size.
+
+Headline:
+"Premium Indian Agricultural Products for Global Markets"
+
+Supporting text:
+"Reliable sourcing, quality-focused supply and professional export solutions for international B2B buyers."
+
+CTA buttons:
+"Request a Quote"
+"WhatsApp Us"
+
+2. Immediately below the hero image/intro, add a dedicated VIDEO section.
+
+VIDEO REQUIREMENT:
+Use a REAL approximately 40-second professional spice/agricultural EXPORT VIDEO.
+
+The video should visually show a realistic export journey such as:
+- Indian spices/agricultural products
+- Cleaning/processing
+- Quality checking
+- Powder/spice preparation
+- Professional packaging
+- Bulk cartons/bags
+- Warehouse handling
+- Container/loading
+- International export/shipping
+
+The video must feel like a real professional Indian spice/agricultural export company presentation.
+
+VERY IMPORTANT:
+Do NOT create a fake video pretending to show our actual factory, warehouse, employees, customers or shipments.
+
+If an actual company video has not yet been provided, create the website component with a clearly marked video placeholder so that we can upload/replace it with our genuine 40-second video later.
+
+Do NOT use a random YouTube video embedded in the website.
+
+VIDEO UI:
+- Approximately 40 seconds
+- Professional thumbnail/poster image
+- Play button
+- Responsive 16:9 layout
+- Works perfectly on mobile
+- Captions/text overlay can be used sparingly
+- Video should not autoplay with sound
+- Keep the video optimized for fast loading
+- Lazy-load the video where appropriate
+
+Add a small heading above the video:
+
+"From India to Global Markets"
+
+Supporting line:
+
+"Explore our approach to sourcing, preparing and supplying Indian agricultural products for international B2B buyers."
+
+After the video, continue with:
+Why Choose Us
+Products
+How It Works
+Export Markets
+Payment Terms
+Request a Quote
+
+The overall first impression should be:
+IMAGE → BUSINESS MESSAGE → 40-SECOND EXPORT VIDEO → PRODUCTS / TRUST → ENQUIRY
+
+Keep the same premium Design 5 visual style shown in the reference screenshots.
