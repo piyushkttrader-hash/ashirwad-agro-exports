@@ -10,6 +10,8 @@ servers:
 tags:
   - name: health
     description: Health operations
+  - name: quotes
+    description: Buyer quotation enquiries
 paths:
   /healthz:
     get:
@@ -24,6 +26,42 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /quotes:
+    post:
+      operationId: submitQuote
+      tags: [quotes]
+      summary: Submit a quotation enquiry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/QuoteEnquiryInput"
+      responses:
+        "201":
+          description: Enquiry saved for the sales team
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/QuoteEnquiryReceipt"
+        "400":
+          description: Invalid or spam submission
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "429":
+          description: Too many submissions
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "500":
+          description: Enquiry could not be saved
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
 components:
   schemas:
     HealthStatus:
@@ -33,4 +71,44 @@ components:
           type: string
       required:
         - status
+    QuoteEnquiryInput:
+      type: object
+      additionalProperties: false
+      properties:
+        fullName: { type: string, minLength: 2, maxLength: 120 }
+        companyName: { type: string, minLength: 2, maxLength: 160 }
+        email: { type: string, format: email, maxLength: 254 }
+        phone: { type: string, minLength: 5, maxLength: 40 }
+        country: { type: string, minLength: 2, maxLength: 100 }
+        productInterest: { type: string, minLength: 1, maxLength: 160 }
+        requiredQuantity: { type: string, minLength: 1, maxLength: 120 }
+        packaging: { type: string, minLength: 1, maxLength: 200 }
+        targetPrice: { type: string, maxLength: 120 }
+        deliveryLocation: { type: string, minLength: 2, maxLength: 160 }
+        message: { type: string, maxLength: 3000 }
+        honeypot: { type: string, maxLength: 0 }
+        formStartedAt: { type: integer, minimum: 1 }
+      required:
+        - fullName
+        - companyName
+        - email
+        - phone
+        - country
+        - productInterest
+        - requiredQuantity
+        - packaging
+        - deliveryLocation
+        - honeypot
+        - formStartedAt
+    QuoteEnquiryReceipt:
+      type: object
+      properties:
+        enquiryId: { type: integer }
+        message: { type: string }
+      required: [enquiryId, message]
+    ErrorResponse:
+      type: object
+      properties:
+        error: { type: string }
+      required: [error]
 

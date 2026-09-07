@@ -5,9 +5,6 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
-export interface HealthStatus {
-  status: string;
-}
 
 export interface QuoteEnquiryInput {
   /**
@@ -61,13 +58,3 @@ export interface QuoteEnquiryInput {
   /** @minimum 1 */
   formStartedAt: number;
 }
-
-export interface QuoteEnquiryReceipt {
-  enquiryId: number;
-  message: string;
-}
-
-export interface ErrorResponse {
-  error: string;
-}
-

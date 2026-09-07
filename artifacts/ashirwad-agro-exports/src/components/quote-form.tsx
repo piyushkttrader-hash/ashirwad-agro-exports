@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { useToast } from '@/hooks/use-toast';
 import { siteConfig } from '@/config';
 import { Loader2 } from 'lucide-react';
+import { useSubmitQuote } from '@workspace/api-client-react';
 
 const quoteFormSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
@@ -36,6 +37,8 @@ interface QuoteFormProps {
 export function QuoteForm({ preselectedProduct, className = "" }: QuoteFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStartedAt] = useState(() => Date.now());
+  const submitQuote = useSubmitQuote();
 
   const form = useForm<QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
@@ -56,26 +59,38 @@ export function QuoteForm({ preselectedProduct, className = "" }: QuoteFormProps
   });
 
   async function onSubmit(data: QuoteFormValues) {
-    if (data.honeypot) return; // Silent rejection for spam
-    
     setIsSubmitting(true);
-    
-    // Simulate API call for the frontend demonstration
-    // In production, this would connect to an endpoint
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    
-    toast({
-      title: "Quote Request Sent Successfully",
-      description: "Our export team will contact you within 24 hours.",
-    });
-    
-    form.reset({
-      ...form.getValues(),
-      message: "",
-      honeypot: "",
-    });
+
+    try {
+      const receipt = await submitQuote.mutateAsync({
+        data: {
+          ...data,
+          targetPrice: data.targetPrice || undefined,
+          message: data.message || undefined,
+          formStartedAt,
+        },
+      });
+
+      toast({
+        title: "Quote Request Sent Successfully",
+        description: receipt.message,
+      });
+
+      form.reset({
+        ...form.getValues(),
+        message: "",
+        targetPrice: "",
+        honeypot: "",
+      });
+    } catch {
+      toast({
+        variant: "destructive",
+        title: "Quote Request Not Sent",
+        description: "We couldn't deliver your request. Your details are still here—please try again shortly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
