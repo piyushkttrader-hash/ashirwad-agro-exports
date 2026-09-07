@@ -96,7 +96,11 @@ export default function Home() {
               <video 
                 src={siteConfig.video.src} 
                 poster={siteConfig.video.poster}
-                controls 
+                controls
+                muted
+                playsInline
+                preload="metadata"
+                aria-label="Ashirwad Agro Exports promotional export video"
                 className="w-full h-full object-cover"
               >
                 Your browser does not support the video tag.

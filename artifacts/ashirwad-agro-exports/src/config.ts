@@ -11,8 +11,8 @@ export const siteConfig = {
     address: "",
   },
   video: {
-    poster: "/bulk-warehouse.jpg",
-    src: "", // Placeholder for the actual ~40-second company export video
+    poster: "/video/ashirwad-export-poster.webp",
+    src: "/video/ashirwad-export-film.mp4",
   },
   founder: {
     name: "Piyosh Kumar Tiwari",

@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "2XSvajixdBX-i3G2HTRn-"
+uri = "file://artifacts/ashirwad-agro-exports/public/video/ashirwad-export-film.mp4"
+type = "video"
+title = "Ashirwad Agro Exports Promotional Video"
+description = "38.4-second 16:9 website-optimized export film with professional transitions and branded closing card."
+logical_id = "44924c5f-40a3-4b81-8f2e-2d9a8e32017d"
+content_hash = "sha256:65930d095605e50b4204f01a0c6c7a5c1fbd5bad0fa844a5b099ae281c320831"
+size = 5182178
+mtime_ms = 1788789168568
+storage_uri = "gcs://replit-rams-assets-pike/rams/assets/repl:67e6b0a1-fac8-40f8-b972-bf22166ee089/44924c5f-40a3-4b81-8f2e-2d9a8e32017d/192ddd33-bd7e-4f25-9241-b4b5088818c9"
+storage_version_token = "1788789202407743"
+content_type = "video/mp4"
