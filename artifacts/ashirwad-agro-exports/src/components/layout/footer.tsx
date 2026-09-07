@@ -2,6 +2,7 @@ import { Link } from 'wouter';
 import { siteConfig } from '@/config';
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { trackConversion } from '@/lib/tracking';
 
 export function Footer() {
   return (
@@ -55,7 +56,7 @@ export function Footer() {
               <li className="flex gap-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
                 {siteConfig.contact.phone ? (
-                  <a href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, '')}`} className="text-sm text-muted/80 hover:text-white transition-colors">
+                  <a href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, '')}`} onClick={() => trackConversion("phone_click", { source: "footer" })} className="text-sm text-muted/80 hover:text-white transition-colors">
                     {siteConfig.contact.phone}
                   </a>
                 ) : (
@@ -65,7 +66,7 @@ export function Footer() {
               <li className="flex gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
                 {siteConfig.contact.email ? (
-                  <a href={`mailto:${siteConfig.contact.email}`} className="text-sm text-muted/80 hover:text-white transition-colors">
+                  <a href={`mailto:${siteConfig.contact.email}`} onClick={() => trackConversion("email_click", { source: "footer" })} className="text-sm text-muted/80 hover:text-white transition-colors">
                     {siteConfig.contact.email}
                   </a>
                 ) : (

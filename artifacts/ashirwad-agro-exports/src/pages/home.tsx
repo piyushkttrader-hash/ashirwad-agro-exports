@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { useSEO } from '@/hooks/use-seo';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import { siteConfig } from '@/config';
+import { ProductWhatsAppActions } from '@/components/product-whatsapp-actions';
+import { trackConversion } from '@/lib/tracking';
 
 export default function Home() {
   useSEO({
@@ -65,19 +67,16 @@ export default function Home() {
                   Request a Quote
                 </Button>
               </Link>
-              {siteConfig.contact.whatsapp ? (
-                <a href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9+]/g, '')}`}>
-                  <Button size="lg" className="h-14 px-8 text-lg font-bold w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#20bd5a] border-none">
-                    WhatsApp Us
-                  </Button>
-                </a>
-              ) : (
-                <Link href="/contact">
-                  <Button size="lg" className="h-14 px-8 text-lg font-bold w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#20bd5a] border-none">
-                    WhatsApp Us
-                  </Button>
-                </Link>
-              )}
+              <a
+                href={`https://wa.me/${siteConfig.whatsapp.primary.replace(/\D/g, '')}?text=${encodeURIComponent(siteConfig.whatsapp.generalMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackConversion("product_whatsapp_click", { source: "home_hero" })}
+              >
+                <Button size="lg" className="h-14 px-8 text-lg font-bold w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#20bd5a] border-none">
+                  WhatsApp Us
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -180,8 +179,8 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {siteConfig.products.slice(0, 4).map((product, idx) => (
-              <Link key={product.id} href={`/products/${product.slug}`}>
-                <div className="group bg-card rounded-xl border border-border/50 overflow-hidden hover:shadow-md transition-all reveal cursor-pointer h-full flex flex-col" style={{ transitionDelay: `${idx * 100}ms` }}>
+              <div key={product.id} className="group bg-card rounded-xl border border-border/50 overflow-hidden hover:shadow-md transition-all reveal h-full flex flex-col" style={{ transitionDelay: `${idx * 100}ms` }}>
+                <Link href={`/products/${product.slug}`} className="flex flex-1 flex-col">
                   <div className="aspect-[4/3] overflow-hidden relative bg-muted">
                     <img 
                       src={product.imageSpecific} 
@@ -199,8 +198,11 @@ export default function Home() {
                       View Details <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
+                </Link>
+                <div className="p-6 pt-0">
+                  <ProductWhatsAppActions productName={product.name} compact />
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -309,19 +311,16 @@ export default function Home() {
                 Request a Quote
               </Button>
             </Link>
-            {siteConfig.contact.whatsapp ? (
-              <a href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9+]/g, '')}`}>
-                <Button size="lg" className="h-14 px-8 text-lg font-bold w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#20bd5a] border-none">
-                  WhatsApp Us
-                </Button>
-              </a>
-            ) : (
-              <Link href="/contact">
-                <Button size="lg" className="h-14 px-8 text-lg font-bold w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#20bd5a] border-none">
-                  WhatsApp Us
-                </Button>
-              </Link>
-            )}
+            <a
+              href={`https://wa.me/${siteConfig.whatsapp.primary.replace(/\D/g, '')}?text=${encodeURIComponent(siteConfig.whatsapp.generalMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackConversion("product_whatsapp_click", { source: "home_cta" })}
+            >
+              <Button size="lg" className="h-14 px-8 text-lg font-bold w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#20bd5a] border-none">
+                WhatsApp Us
+              </Button>
+            </a>
           </div>
         </div>
       </section>

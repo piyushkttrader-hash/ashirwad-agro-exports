@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { useSEO } from '@/hooks/use-seo';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import { siteConfig } from '@/config';
+import { ProductWhatsAppActions } from '@/components/product-whatsapp-actions';
+import { trackConversion } from '@/lib/tracking';
 import { QuoteForm } from '@/components/quote-form';
 
 export default function Kenya() {
@@ -39,17 +41,16 @@ export default function Kenya() {
             <Button size="lg" className="h-14 px-8 text-lg font-bold w-full sm:w-auto bg-white text-primary hover:bg-white/90" onClick={() => document.getElementById('kenya-quote')?.scrollIntoView({ behavior: 'smooth' })}>
               Request a Quote for Kenya
             </Button>
-            {siteConfig.contact.whatsapp ? (
-              <a href={`https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9+]/g, '')}`}>
-                <Button size="lg" className="h-14 px-8 text-lg font-bold w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#20bd5a] border-none">
-                  WhatsApp Us
-                </Button>
-              </a>
-            ) : (
-              <Button size="lg" className="h-14 px-8 text-lg font-bold w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#20bd5a] border-none" onClick={() => document.getElementById('kenya-quote')?.scrollIntoView({ behavior: 'smooth' })}>
+            <a
+              href={`https://wa.me/${siteConfig.whatsapp.primary.replace(/\D/g, '')}?text=${encodeURIComponent(siteConfig.whatsapp.generalMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackConversion("product_whatsapp_click", { source: "kenya_page" })}
+            >
+              <Button size="lg" className="h-14 px-8 text-lg font-bold w-full sm:w-auto bg-[#25D366] text-white hover:bg-[#20bd5a] border-none">
                 WhatsApp Us
               </Button>
-            )}
+            </a>
           </div>
         </div>
       </section>
@@ -100,14 +101,17 @@ export default function Kenya() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {siteConfig.products.slice(0, 4).map((product, idx) => (
-              <Link key={product.id} href={`/products/${product.slug}`}>
-                <div className="bg-card border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all cursor-pointer reveal" style={{ transitionDelay: `${idx * 50}ms` }}>
+              <div key={product.id} className="bg-card border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all reveal" style={{ transitionDelay: `${idx * 50}ms` }}>
+                <Link href={`/products/${product.slug}`} className="block">
                   <div className="aspect-square rounded-md overflow-hidden mb-4 bg-muted">
                     <img src={product.imageSpecific} alt={product.name} className="w-full h-full object-cover" />
                   </div>
                   <h4 className="font-bold text-sm md:text-base">{product.name}</h4>
+                </Link>
+                <div className="mt-4">
+                  <ProductWhatsAppActions productName={product.name} compact />
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

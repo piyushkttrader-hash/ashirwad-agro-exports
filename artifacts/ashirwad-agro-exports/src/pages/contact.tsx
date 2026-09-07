@@ -1,8 +1,9 @@
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageCircle, Handshake } from 'lucide-react';
 import { useSEO } from '@/hooks/use-seo';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import { siteConfig } from '@/config';
 import { QuoteForm } from '@/components/quote-form';
+import { trackConversion } from '@/lib/tracking';
 
 export default function Contact() {
   useSEO({
@@ -32,34 +33,66 @@ export default function Contact() {
             <div className="lg:col-span-1 space-y-6 reveal">
               <h2 className="text-2xl font-serif font-bold mb-6">Direct Contact</h2>
               
-              {siteConfig.contact.whatsapp || siteConfig.contact.phone ? (
-                <a href={siteConfig.contact.whatsapp ? `https://wa.me/${siteConfig.contact.whatsapp.replace(/[^0-9+]/g, '')}` : `tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, '')}`} className="block group">
+                <a
+                  href={`https://wa.me/${siteConfig.whatsapp.primary.replace(/\D/g, '')}?text=${encodeURIComponent(siteConfig.whatsapp.generalMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackConversion("product_whatsapp_click", { source: "contact_page" })}
+                  className="block group"
+                >
                   <div className="bg-card border rounded-xl p-6 hover:border-[#25D366] hover:shadow-md transition-all">
                     <div className="flex items-center gap-4 mb-2">
                       <div className="h-10 w-10 bg-[#25D366]/10 rounded-full flex items-center justify-center">
-                        <Phone className="h-5 w-5 text-[#25D366]" />
+                        <MessageCircle className="h-5 w-5 text-[#25D366]" />
                       </div>
-                      <h3 className="font-bold text-lg group-hover:text-[#25D366] transition-colors">WhatsApp / Phone</h3>
+                      <h3 className="font-bold text-lg group-hover:text-[#25D366] transition-colors">Product WhatsApp Enquiries</h3>
                     </div>
-                    <p className="text-muted-foreground ml-14">{siteConfig.contact.phone || siteConfig.contact.whatsapp}</p>
+                    <p className="text-muted-foreground ml-14">Price, MOQ, packaging and export enquiries</p>
                   </div>
                 </a>
-              ) : (
-                <div className="block group cursor-pointer" onClick={() => document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })}>
-                  <div className="bg-card border rounded-xl p-6 hover:border-[#25D366] hover:shadow-md transition-all">
-                    <div className="flex items-center gap-4 mb-2">
-                      <div className="h-10 w-10 bg-[#25D366]/10 rounded-full flex items-center justify-center">
-                        <Phone className="h-5 w-5 text-[#25D366]" />
-                      </div>
-                      <h3 className="font-bold text-lg group-hover:text-[#25D366] transition-colors">WhatsApp / Phone</h3>
+
+                <div className="bg-secondary text-white rounded-xl p-6 shadow-sm">
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="h-10 w-10 bg-white/10 rounded-full flex items-center justify-center">
+                      <Handshake className="h-5 w-5 text-white" />
                     </div>
-                    <p className="text-muted-foreground ml-14">[Add phone / WhatsApp number]</p>
+                    <h3 className="font-bold text-lg">Private Business Discussion</h3>
                   </div>
+                  <p className="text-sm text-white/75 leading-relaxed mb-5">
+                    Have a specific deal, custom requirement or business proposal? Talk directly with our business team.
+                  </p>
+                  <a
+                    href={`https://wa.me/${siteConfig.whatsapp.directBusiness.replace(/\D/g, '')}?text=${encodeURIComponent(siteConfig.whatsapp.directBusinessMessage)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackConversion("private_business_whatsapp_click", { source: "contact_page" })}
+                    className="flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-white px-4 py-2.5 text-sm font-bold text-secondary hover:bg-white/90"
+                  >
+                    <MessageCircle className="h-5 w-5" />
+                    Discuss a Business Deal
+                  </a>
                 </div>
+
+              {siteConfig.contact.phone && (
+                <a
+                  href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, '')}`}
+                  onClick={() => trackConversion("phone_click", { source: "contact_page" })}
+                  className="block group"
+                >
+                  <div className="bg-card border rounded-xl p-6 hover:border-primary hover:shadow-md transition-all">
+                    <div className="flex items-center gap-4 mb-2">
+                      <div className="h-10 w-10 bg-primary/10 rounded-full flex items-center justify-center">
+                        <Phone className="h-5 w-5 text-primary" />
+                      </div>
+                      <h3 className="font-bold text-lg group-hover:text-primary transition-colors">Phone</h3>
+                    </div>
+                    <p className="text-muted-foreground ml-14">{siteConfig.contact.phone}</p>
+                  </div>
+                </a>
               )}
 
               {siteConfig.contact.email ? (
-                <a href={`mailto:${siteConfig.contact.email}`} className="block group">
+                <a href={`mailto:${siteConfig.contact.email}`} onClick={() => trackConversion("email_click", { source: "contact_page" })} className="block group">
                   <div className="bg-card border rounded-xl p-6 hover:border-primary hover:shadow-md transition-all">
                     <div className="flex items-center gap-4 mb-2">
                       <div className="h-10 w-10 bg-primary/10 rounded-full flex items-center justify-center">

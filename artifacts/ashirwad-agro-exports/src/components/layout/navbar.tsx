@@ -3,6 +3,7 @@ import { Link, useLocation } from 'wouter';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { siteConfig } from '@/config';
 import { Button } from '@/components/ui/button';
+import { trackConversion } from '@/lib/tracking';
 
 export function Navbar() {
   const [location] = useLocation();
@@ -39,7 +40,7 @@ export function Navbar() {
       <div className="bg-primary text-primary-foreground py-2 px-4 md:px-8 text-sm font-medium hidden md:flex justify-between items-center z-50 relative">
         <div className="flex gap-6">
           {siteConfig.contact.email ? (
-            <a href={`mailto:${siteConfig.contact.email}`} className="flex items-center gap-2 hover:text-accent transition-colors">
+            <a href={`mailto:${siteConfig.contact.email}`} onClick={() => trackConversion("email_click", { source: "navbar" })} className="flex items-center gap-2 hover:text-accent transition-colors">
               <Mail className="h-4 w-4" />
               {siteConfig.contact.email}
             </a>
@@ -50,7 +51,7 @@ export function Navbar() {
             </span>
           )}
           {siteConfig.contact.phone ? (
-            <a href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, '')}`} className="flex items-center gap-2 hover:text-accent transition-colors">
+            <a href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, '')}`} onClick={() => trackConversion("phone_click", { source: "navbar" })} className="flex items-center gap-2 hover:text-accent transition-colors">
               <Phone className="h-4 w-4" />
               {siteConfig.contact.phone}
             </a>

@@ -1,0 +1,131 @@
+Update the WhatsApp enquiry system across the entire Ashirwad Agro Exports website.
+
+PRIMARY WHATSAPP NUMBER:
++919739469814
+
+SECONDARY DIRECT BUSINESS WHATSAPP NUMBER:
++919844166890
+
+IMPORTANT:
+Do not display or hard-code the numbers in multiple places. Create one central editable configuration for both WhatsApp numbers so they can be changed later from one place.
+
+1. PRODUCT WHATSAPP SYSTEM
+Connect EVERY product's WhatsApp enquiry button to:
++919739469814
+
+Use WhatsApp Click-to-Chat links in international format without the + sign.
+
+Every product must generate a product-specific editable pre-filled message.
+
+Examples:
+
+Onion Powder:
+"Hello, I am interested in your Onion Powder. Please share price, MOQ, packaging options and export details."
+
+Garlic Powder:
+"Hello, I am interested in your Garlic Powder. Please share price, MOQ, packaging options and export details."
+
+The product name must automatically change according to the product.
+
+The customer must remain free to edit the pre-filled message before sending it.
+
+Use the official WhatsApp-style icon and make the CTA visually clear.
+
+Button text:
+"Enquire on WhatsApp"
+
+Also keep the floating WhatsApp button connected to the PRIMARY WhatsApp number.
+
+2. SECONDARY PRIVATE BUSINESS DISCUSSION SYSTEM
+
+Use the second WhatsApp number:
++919844166890
+
+Do NOT make this the main product enquiry number.
+
+Create a premium secondary CTA throughout relevant product/detail pages and especially on the Contact/Request a Quote area:
+
+"Private Business Discussion"
+
+Supporting text:
+"Have a specific deal, custom requirement or business proposal? Talk directly with our business team."
+
+Button:
+"Discuss a Business Deal"
+
+This button must open WhatsApp chat with:
++919844166890
+
+Use this pre-filled message:
+
+"Hello, I would like to discuss a specific business requirement with Ashirwad Agro Exports. I have a custom proposal/deal to discuss."
+
+The customer must be able to freely edit this message and write their complete requirement before sending.
+
+3. SMART PRODUCT EXPERIENCE
+
+On every product page/card, show:
+
+[Enquire on WhatsApp]
+
+Then below it, in a more subtle premium style:
+
+"Looking for a custom deal or specific business arrangement?"
+
+[Private Business Discussion]
+
+Do not make the second option visually compete with the main product enquiry CTA.
+
+4. IMPORTANT UX
+
+The system should feel premium and intentional, NOT like two random phone numbers.
+
+Primary channel =
+Product price / MOQ / packaging / export enquiry.
+
+Secondary channel =
+Custom deal / special requirement / business proposal / direct discussion.
+
+Do not use the word "locked" in the customer-facing UI.
+
+Use wording such as:
+"Private Business Discussion"
+"Direct Business Desk"
+"Custom Business Enquiry"
+
+5. MOBILE
+
+Make sure both buttons work perfectly on Android and iPhone.
+
+Do not allow floating WhatsApp buttons to cover product content, forms or important CTAs.
+
+6. TRACKING
+
+Prepare separate conversion events for:
+- product_whatsapp_click
+- private_business_whatsapp_click
+- quote_form_submit
+- phone_click
+- email_click
+
+Do not break any existing Google Ads / GA4 / GTM implementation.
+
+7. CENTRAL CONFIGURATION
+
+Create a single configuration object/file for:
+
+PRIMARY_WHATSAPP = +919739469814
+DIRECT_BUSINESS_WHATSAPP = +919844166890
+
+All WhatsApp buttons across the website must use this central configuration.
+
+8. TESTING
+
+After implementation:
+- Test every product WhatsApp button.
+- Verify the correct product name appears in the message.
+- Verify the primary number opens correctly.
+- Verify the Private Business Discussion button opens the second number.
+- Verify the pre-filled message is editable.
+- Test desktop and mobile layouts.
+- Do not remove or break existing website sections, SEO, forms, navigation or design.

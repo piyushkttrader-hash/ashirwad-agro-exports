@@ -11,6 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 import { siteConfig } from '@/config';
 import { Loader2 } from 'lucide-react';
 import { useSubmitQuote } from '@workspace/api-client-react';
+import { trackConversion } from '@/lib/tracking';
 
 const quoteFormSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
@@ -75,6 +76,7 @@ export function QuoteForm({ preselectedProduct, className = "" }: QuoteFormProps
         title: "Quote Request Sent Successfully",
         description: receipt.message,
       });
+      trackConversion("quote_form_submit", { product_name: data.productInterest });
 
       form.reset({
         ...form.getValues(),

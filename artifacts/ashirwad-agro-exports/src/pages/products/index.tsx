@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { useSEO } from '@/hooks/use-seo';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import { siteConfig } from '@/config';
+import { ProductWhatsAppActions } from '@/components/product-whatsapp-actions';
 
 export default function Products() {
   useSEO({
@@ -67,6 +68,9 @@ export default function Products() {
                     </div>
                   </div>
                 </Link>
+                <div className="px-6 pb-6 md:px-8 md:pb-8">
+                  <ProductWhatsAppActions productName={product.name} compact />
+                </div>
               </div>
             ))}
           </div>

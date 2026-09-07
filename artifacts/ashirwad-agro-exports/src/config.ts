@@ -6,9 +6,15 @@ export const siteConfig = {
   contact: {
     email: "",
     phone: "", 
-    whatsapp: "", 
-    whatsappDisplay: "",
     address: "",
+  },
+  whatsapp: {
+    primary: "+919739469814",
+    directBusiness: "+919844166890",
+    generalMessage: "Hello, I am interested in your agricultural products. Please share price, MOQ, packaging options and export details.",
+    productMessage: (productName: string) =>
+      `Hello, I am interested in your ${productName}. Please share price, MOQ, packaging options and export details.`,
+    directBusinessMessage: "Hello, I would like to discuss a specific business requirement with Ashirwad Agro Exports. I have a custom proposal/deal to discuss.",
   },
   video: {
     poster: "/video/ashirwad-export-poster.webp",

@@ -1,5 +1,6 @@
 import { useSEO } from '@/hooks/use-seo';
 import { siteConfig } from '@/config';
+import { trackConversion } from '@/lib/tracking';
 
 export default function TermsConditions() {
   useSEO({
@@ -45,7 +46,7 @@ export default function TermsConditions() {
           For any questions regarding these Terms & Conditions, please contact us at:
           <br /><br />
           Email: {siteConfig.contact.email ? (
-            <a href={`mailto:${siteConfig.contact.email}`} className="text-primary hover:underline">{siteConfig.contact.email}</a>
+            <a href={`mailto:${siteConfig.contact.email}`} onClick={() => trackConversion("email_click", { source: "terms_page" })} className="text-primary hover:underline">{siteConfig.contact.email}</a>
           ) : (
             <span>[Add business email]</span>
           )}

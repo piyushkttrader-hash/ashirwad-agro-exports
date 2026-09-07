@@ -1,5 +1,6 @@
 import { useSEO } from '@/hooks/use-seo';
 import { siteConfig } from '@/config';
+import { trackConversion } from '@/lib/tracking';
 
 export default function PrivacyPolicy() {
   useSEO({
@@ -52,7 +53,7 @@ export default function PrivacyPolicy() {
           If you have any questions about this privacy policy or our privacy practices, please contact us at:
           <br /><br />
           Email: {siteConfig.contact.email ? (
-            <a href={`mailto:${siteConfig.contact.email}`} className="text-primary hover:underline">{siteConfig.contact.email}</a>
+            <a href={`mailto:${siteConfig.contact.email}`} onClick={() => trackConversion("email_click", { source: "privacy_page" })} className="text-primary hover:underline">{siteConfig.contact.email}</a>
           ) : (
             <span>[Add business email]</span>
           )}

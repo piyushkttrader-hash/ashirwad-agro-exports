@@ -6,6 +6,7 @@ import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import { siteConfig } from '@/config';
 import NotFound from '@/pages/not-found';
 import { QuoteForm } from '@/components/quote-form';
+import { ProductWhatsAppActions } from '@/components/product-whatsapp-actions';
 
 export default function ProductDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -116,6 +117,9 @@ export default function ProductDetail() {
               <Button size="lg" className="w-full sm:w-auto font-bold" onClick={() => document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })}>
                 Request a Quote for {product.name}
               </Button>
+              <div className="mt-5 max-w-md">
+                <ProductWhatsAppActions productName={product.name} />
+              </div>
             </div>
           </div>
         </div>
@@ -138,8 +142,8 @@ export default function ProductDetail() {
           <h2 className="text-2xl font-serif font-bold mb-8">Related Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedProducts.map((p) => (
-              <Link key={p.id} href={`/products/${p.slug}`}>
-                <div className="group bg-card rounded-xl border overflow-hidden hover:shadow-md transition-all cursor-pointer h-full flex flex-col">
+              <div key={p.id} className="group bg-card rounded-xl border overflow-hidden hover:shadow-md transition-all h-full flex flex-col">
+                <Link href={`/products/${p.slug}`} className="flex-1">
                   <div className="aspect-video overflow-hidden relative bg-muted">
                     <img 
                       src={p.imageSpecific} 
@@ -152,8 +156,11 @@ export default function ProductDetail() {
                     <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors">{p.name}</h3>
                     <p className="text-muted-foreground text-sm line-clamp-2">{p.shortDescription}</p>
                   </div>
+                </Link>
+                <div className="p-5 pt-0">
+                  <ProductWhatsAppActions productName={p.name} compact />
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
