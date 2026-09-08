@@ -1,3 +1,9 @@
+const newProductInquiryMessages: Record<string, string> = {
+  "Tomato Powder": "Hello, I am interested in Tomato Powder for bulk supply. Please share your specifications, MOQ, packaging options and quotation.",
+  "Ginger Powder": "Hello, I am interested in Ginger Powder for bulk supply. Please share your specifications, MOQ, packaging options and quotation.",
+  "Red Chilli Powder": "Hello, I am interested in Red Chilli Powder for bulk supply. Please share your specifications, MOQ, packaging options and quotation.",
+};
+
 export const siteConfig = {
   name: "Ashirwad Agro Exports",
   shortName: "Ashirwad Agro",
@@ -13,6 +19,7 @@ export const siteConfig = {
     directBusiness: "+919844166890",
     generalMessage: "Hello, I am interested in your agricultural products. Please share price, MOQ, packaging options and export details.",
     productMessage: (productName: string) =>
+      newProductInquiryMessages[productName] ??
       `Hello, I am interested in your ${productName}. Please share price, MOQ, packaging options and export details.`,
     directBusinessMessage: "Hello, I would like to discuss a specific business requirement with Ashirwad Agro Exports. I have a custom proposal/deal to discuss.",
   },
@@ -126,6 +133,39 @@ export const siteConfig = {
       applications: ["Commercial kitchens", "Retail repacking", "Ready-to-eat meals", "Marinades", "Snack manufacturing"],
       specifications: "[Specification placeholders to be discussed per buyer requirements]",
       packaging: "[Packaging options arranged per order volume and logistics]",
+    },
+    {
+      id: "tomato-powder",
+      slug: "tomato-powder",
+      name: "Tomato Powder",
+      shortDescription: "Tomato powder available for bulk commercial supply and buyer requirement discussion.",
+      image: "/hero-spices.jpg",
+      imageSpecific: "/tomato-powder.jpg",
+      applications: ["Food processing", "Sauces & seasonings", "Commercial ingredient supply"],
+      specifications: "[Specifications to be discussed according to buyer requirements]",
+      packaging: "[Packaging options to be discussed according to order requirements]",
+    },
+    {
+      id: "ginger-powder",
+      slug: "ginger-powder",
+      name: "Ginger Powder",
+      shortDescription: "Ginger powder available for bulk commercial supply and buyer requirement discussion.",
+      image: "/hero-spices.jpg",
+      imageSpecific: "/ginger-powder.jpg",
+      applications: ["Food processing", "Spice blends", "Commercial ingredient supply"],
+      specifications: "[Specifications to be discussed according to buyer requirements]",
+      packaging: "[Packaging options to be discussed according to order requirements]",
+    },
+    {
+      id: "red-chilli-powder",
+      slug: "red-chilli-powder",
+      name: "Red Chilli Powder",
+      shortDescription: "Red chilli powder available for bulk commercial supply and buyer requirement discussion.",
+      image: "/hero-spices.jpg",
+      imageSpecific: "/red-chilli-powder.jpg",
+      applications: ["Food processing", "Seasoning blends", "Commercial ingredient supply"],
+      specifications: "[Specifications to be discussed according to buyer requirements]",
+      packaging: "[Packaging options to be discussed according to order requirements]",
     }
   ]
 };
