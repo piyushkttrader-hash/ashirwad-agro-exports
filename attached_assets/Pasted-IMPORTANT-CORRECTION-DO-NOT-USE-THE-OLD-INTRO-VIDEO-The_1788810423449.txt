@@ -1,0 +1,54 @@
+IMPORTANT CORRECTION — DO NOT USE THE OLD INTRO VIDEO
+
+The current homepage intro/background video is WRONG.
+
+You previously used an older video that was already in the project. REMOVE that video from the homepage hero/intro background.
+
+I have created a NEW 40-second video specifically for the homepage intro background. This is the video that must be used.
+
+Requirements:
+
+1. DO NOT use the old video that is currently connected to the homepage.
+2. Use ONLY the new 40-second video I provided/attached for this task.
+3. If the attached video is not physically available inside the project filesystem, DO NOT substitute another video and DO NOT make assumptions.
+4. In that case, tell me exactly where in the Replit Files panel I need to upload the video so you can reference it from the project.
+5. Once the new video is available in the project, integrate it into the homepage hero/intro section as the background video.
+6. The video is approximately 40 seconds long and is designed as a visual background, NOT as a standalone video with text.
+7. It must:
+   - autoplay
+   - muted
+   - loop
+   - playsinline
+   - start automatically where browser policy allows
+   - have no visible video controls
+   - work properly on mobile and desktop
+8. Apply a subtle dark/soft blur overlay over the video so the website's foreground text and CTA buttons remain highly readable.
+9. Do NOT add text inside the video itself.
+10. Keep the existing hero text and buttons ABOVE the video:
+   Headline:
+   "Premium Indian Agricultural Products for Global Markets"
+
+   Supporting text:
+   "Reliable sourcing, quality-focused supply and professional export solutions for international B2B buyers."
+
+   Primary CTA:
+   "Request a Quote"
+
+   Secondary CTA:
+   "WhatsApp Us"
+
+11. The video must cover the entire hero background using object-fit: cover without stretching or distortion.
+12. Add a dark gradient overlay for premium readability.
+13. Do not change the website's existing logo, navigation, CTA links, WhatsApp number, or other sections.
+14. Remove the old video reference/import from the hero so there is only ONE background video.
+15. Optimize the video loading so it does not unnecessarily slow down the homepage. Use a poster/fallback image if appropriate and lazy/preload strategy where appropriate.
+16. Make sure the hero remains fully responsive on mobile.
+17. After implementation, verify that the browser is actually loading the NEW 40-second video file and not the old video.
+18. Do not create a fake replacement video or use an Adobe Stock video instead.
+
+IMPORTANT:
+If the new 40-second video cannot be accessed by the project, STOP at that point and tell me:
+"Please upload the 40-second video through the Replit Files panel."
+Do not silently use the old video again.
+
+After the correct video is available and integrated, test the homepage and confirm which exact video file is being used.
