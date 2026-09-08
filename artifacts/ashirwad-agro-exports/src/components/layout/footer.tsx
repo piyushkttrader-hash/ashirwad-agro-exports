@@ -1,8 +1,30 @@
 import { Link } from 'wouter';
 import { siteConfig } from '@/config';
-import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
+import {
+  ArrowRight,
+  CreditCard,
+  Globe2,
+  Home,
+  Mail,
+  MapPin,
+  Package,
+  Phone,
+  ShieldCheck,
+  Users,
+  Workflow,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { trackConversion } from '@/lib/tracking';
+
+const quickLinks = [
+  { href: '/', label: 'Home', icon: Home },
+  { href: '/about', label: 'About Us', icon: Users },
+  { href: '/products', label: 'Products', icon: Package },
+  { href: '/why-us', label: 'Why Choose Us', icon: ShieldCheck },
+  { href: '/how-it-works', label: 'How It Works', icon: Workflow },
+  { href: '/payment-terms', label: 'Payment Terms', icon: CreditCard },
+  { href: '/kenya', label: 'Kenya Exports', icon: Globe2 },
+] as const;
 
 export function Footer() {
   return (
@@ -34,14 +56,21 @@ export function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="font-serif font-bold text-lg text-white mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              <li><Link href="/" className="text-sm hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="/about" className="text-sm hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/products" className="text-sm hover:text-primary transition-colors">Products</Link></li>
-              <li><Link href="/why-us" className="text-sm hover:text-primary transition-colors">Why Choose Us</Link></li>
-              <li><Link href="/how-it-works" className="text-sm hover:text-primary transition-colors">How It Works</Link></li>
-              <li><Link href="/payment-terms" className="text-sm hover:text-primary transition-colors">Payment Terms</Link></li>
-              <li><Link href="/kenya" className="text-sm hover:text-primary transition-colors">Kenya Exports</Link></li>
+            <ul className="grid grid-cols-1 gap-2.5">
+              {quickLinks.map(({ href, label, icon: Icon }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="group flex min-h-11 w-full items-center gap-3 rounded-lg border border-white/10 bg-white/[0.035] px-3.5 py-2.5 text-sm font-medium text-muted/90 transition-colors duration-200 hover:border-primary/45 hover:bg-primary/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
+                  >
+                    <Icon
+                      className="h-4 w-4 shrink-0 text-primary transition-colors group-hover:text-primary"
+                      aria-hidden="true"
+                    />
+                    <span>{label}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
