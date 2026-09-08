@@ -8,7 +8,6 @@ import {
   Mail,
   MapPin,
   Package,
-  Phone,
   ShieldCheck,
   Users,
   Workflow,
@@ -94,24 +93,14 @@ export function Footer() {
                 <span className="text-sm text-muted/80">{siteConfig.contact.address || "India"}</span>
               </li>
               <li className="flex gap-3">
-                <Phone className="h-5 w-5 text-primary shrink-0" />
-                {siteConfig.contact.phone ? (
-                  <a href={`tel:${siteConfig.contact.phone.replace(/[^0-9+]/g, '')}`} onClick={() => trackConversion("phone_click", { source: "footer" })} className="text-sm text-muted/80 hover:text-white transition-colors">
-                    {siteConfig.contact.phone}
-                  </a>
-                ) : (
-                  <span className="text-sm text-muted/80">[Add phone / WhatsApp number]</span>
-                )}
-              </li>
-              <li className="flex gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                {siteConfig.contact.email ? (
-                  <a href={`mailto:${siteConfig.contact.email}`} onClick={() => trackConversion("email_click", { source: "footer" })} className="text-sm text-muted/80 hover:text-white transition-colors">
-                    {siteConfig.contact.email}
-                  </a>
-                ) : (
-                  <span className="text-sm text-muted/80">[Add business email]</span>
-                )}
+                <a
+                  href="mailto:piyushkttrader@gmail.com"
+                  onClick={() => trackConversion("email_click", { source: "footer" })}
+                  className="min-w-0 break-all text-sm font-medium text-muted/90 underline decoration-white/25 underline-offset-4 transition-[color,opacity,transform,text-decoration-color] duration-150 hover:text-white hover:decoration-primary active:scale-[0.98] active:opacity-75"
+                >
+                  piyushkttrader@gmail.com
+                </a>
               </li>
             </ul>
           </div>
