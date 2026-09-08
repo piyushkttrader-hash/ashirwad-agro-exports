@@ -1,6 +1,7 @@
 type ConversionEvent =
   | "product_whatsapp_click"
   | "private_business_whatsapp_click"
+  | "serious_buyer_whatsapp_click"
   | "quote_form_submit"
   | "phone_click"
   | "email_click";

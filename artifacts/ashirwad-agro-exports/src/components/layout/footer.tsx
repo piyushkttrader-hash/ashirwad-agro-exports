@@ -26,6 +26,17 @@ const quickLinks = [
   { href: '/kenya', label: 'Kenya Exports', icon: Globe2 },
 ] as const;
 
+const seriousBuyerMessage = `Hello Ashirwad Agro Exports, I am a serious buyer and would like to discuss a bulk purchase requirement.
+
+Product:
+Required Quantity:
+Destination Country:
+Packaging Requirement:
+
+Please share the relevant details and quotation.`;
+
+const seriousBuyerWhatsAppUrl = `https://wa.me/${siteConfig.whatsapp.directBusiness.replace(/\D/g, '')}?text=${encodeURIComponent(seriousBuyerMessage)}`;
+
 export function Footer() {
   return (
     <footer className="bg-foreground text-muted pt-16 pb-8 border-t-4 border-primary">
@@ -111,11 +122,19 @@ export function Footer() {
             <p className="text-sm text-muted/80 mb-4">
               Discuss your bulk requirements, specifications, and packaging needs with our export team.
             </p>
-            <Link href="/contact">
-              <Button className="w-full gap-2 font-semibold">
+            <p className="mb-5 rounded-lg border border-primary/20 bg-primary/10 px-3.5 py-3 text-xs leading-relaxed text-muted/85">
+              Serious buyers and genuine business enquiries are welcome. Please share your product requirement, quantity and destination so our team can assist you promptly.
+            </p>
+            <Button asChild className="w-full gap-2 font-semibold shadow-md transition-[transform,box-shadow,background-color] duration-150 ease-out active:translate-y-0.5 active:scale-[0.97] active:shadow-sm">
+              <a
+                href={seriousBuyerWhatsAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackConversion("serious_buyer_whatsapp_click", { source: "footer_ready_to_order" })}
+              >
                 Request a Quote <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
+              </a>
+            </Button>
           </div>
         </div>
 

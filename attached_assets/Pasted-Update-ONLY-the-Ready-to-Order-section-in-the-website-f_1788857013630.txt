@@ -1,0 +1,79 @@
+Update ONLY the "Ready to Order?" section in the website footer.
+
+GOAL:
+This section should be for genuine and serious B2B buyers who are ready to discuss an actual bulk purchase requirement.
+
+1. KEEP THE HEADING:
+"Ready to Order?"
+
+2. KEEP THIS EXISTING DESCRIPTION:
+"Discuss your bulk requirements, specifications, and packaging needs with our export team."
+
+3. ADD THIS SERIOUS BUYER NOTICE directly below the description:
+
+"Serious buyers and genuine business enquiries are welcome. Please share your product requirement, quantity and destination so our team can assist you promptly."
+
+Design this notice professionally:
+- Make it clearly visible but not aggressive.
+- Use slightly smaller text than the main description.
+- Maintain the premium international B2B look.
+- Do not use warning/red colors.
+- Keep good spacing and readability on mobile and desktop.
+
+4. CONNECT THE "REQUEST A QUOTE" BUTTON TO PRIVATE WHATSAPP
+
+Change ONLY the "Request a Quote" button inside this Ready to Order section.
+
+WhatsApp number:
++91 98441 66890
+
+Use this number in WhatsApp URL format:
+919844166890
+
+When a buyer clicks "Request a Quote", open WhatsApp directly with this pre-filled message:
+
+"Hello Ashirwad Agro Exports, I am a serious buyer and would like to discuss a bulk purchase requirement.
+
+Product:
+Required Quantity:
+Destination Country:
+Packaging Requirement:
+
+Please share the relevant details and quotation."
+
+The buyer must be able to edit this message before sending it.
+
+5. IMPORTANT WHATSAPP RULES
+
+- This footer "Request a Quote" button must use ONLY:
+  919844166890
+
+- Do NOT change the primary WhatsApp number used for normal individual product enquiries.
+
+- Do NOT change the existing floating WhatsApp button unless specifically instructed.
+
+- Do NOT accidentally replace WhatsApp numbers globally.
+
+6. BUTTON BEHAVIOUR
+
+- Keep the existing premium blue "Request a Quote" button design.
+- Keep the arrow icon.
+- Make the whole button clickable.
+- Add a subtle tactile press/tap effect so it feels like a real button when pressed.
+- It should work correctly on Android, iPhone and desktop.
+- Open WhatsApp/WhatsApp Web appropriately.
+- Track this click separately as a private/serious buyer enquiry if the existing analytics event system supports it.
+
+7. DO NOT CHANGE
+
+Do not change:
+- Header
+- Logo
+- Products
+- Quick Links
+- Other WhatsApp buttons
+- Existing product enquiry functionality
+- Footer layout except for the requested Ready to Order changes
+- Website colors or overall design
+
+After implementation, verify that clicking the footer "Request a Quote" button opens WhatsApp to 919844166890 with the correct pre-filled serious buyer message.
