@@ -61,7 +61,7 @@ export function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="group flex min-h-11 w-full items-center gap-3 rounded-lg border border-white/10 bg-white/[0.035] px-3.5 py-2.5 text-sm font-medium text-muted/90 transition-colors duration-200 hover:border-primary/45 hover:bg-primary/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
+                    className="group flex min-h-11 w-full touch-manipulation select-none items-center gap-3 rounded-lg border border-white/15 bg-white/[0.06] px-3.5 py-2.5 text-sm font-medium text-muted/90 shadow-[0_3px_0_rgba(0,0,0,0.22),0_6px_14px_rgba(0,0,0,0.12)] transition-[transform,box-shadow,background-color,border-color,color] duration-150 ease-out hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/12 hover:text-white hover:shadow-[0_4px_0_rgba(0,0,0,0.2),0_8px_18px_rgba(0,0,0,0.16)] active:translate-y-0.5 active:scale-[0.97] active:border-primary/40 active:bg-primary/15 active:shadow-[0_1px_0_rgba(0,0,0,0.18),0_2px_5px_rgba(0,0,0,0.1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
                   >
                     <Icon
                       className="h-4 w-4 shrink-0 text-primary transition-colors group-hover:text-primary"
