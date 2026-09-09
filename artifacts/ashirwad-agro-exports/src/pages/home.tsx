@@ -1,42 +1,83 @@
 import { Link } from 'wouter';
-import { ArrowRight, Globe2, Package, ShieldCheck, TrendingUp, FileText, Settings, Handshake, MapPin } from 'lucide-react';
+import { ArrowRight, Building2, Factory, FileText, Globe2, Handshake, MapPin, Package, Settings, ShieldCheck, Store, TrendingUp, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useSEO } from '@/hooks/use-seo';
 import { useScrollReveal } from '@/hooks/use-scroll-reveal';
 import { siteConfig } from '@/config';
 import { ProductWhatsAppActions } from '@/components/product-whatsapp-actions';
+import { QuoteForm } from '@/components/quote-form';
 import { trackConversion } from '@/lib/tracking';
 
 export default function Home() {
   useSEO({
-    title: "Premium Indian Agricultural Products for Global Markets",
-    description: "Reliable sourcing, quality-focused supply and professional export solutions for international B2B buyers.",
+    title: "Ashirwad Agro Exports | Indian Agro Products Supplier & Exporter",
+    description: "Explore Indian agro products for bulk B2B supply from Ashirwad Agro Exports, including garlic, onion, tomato, ginger and red chilli powders, moringa and spice blends.",
     canonical: "/"
   });
   useScrollReveal();
 
   const features = [
     {
-      title: "Commercial Focus",
-      description: "Dedicated to serving the volume and documentation needs of international B2B buyers.",
+      title: "Commercial Sourcing",
+      description: "Product sourcing is discussed according to the buyer's commercial requirements.",
       icon: Package
     },
     {
-      title: "Requirement Discussion",
-      description: "We review your specific commercial requirements before providing tailored quotations.",
-      icon: TrendingUp
-    },
-    {
-      title: "Specification Alignment",
-      description: "Products prepared and supplied according to your agreed grading and processing requirements.",
+      title: "Quality Alignment",
+      description: "Requested quality parameters are reviewed before commercial terms are confirmed.",
       icon: ShieldCheck
     },
     {
-      title: "Export Preparation",
-      description: "Packaging sizes and logistics handled based on the agreed needs of your destination market.",
-      icon: Globe2
+      title: "Handling Requirements",
+      description: "Processing and handling expectations are discussed for each buyer enquiry.",
+      icon: Settings
+    },
+    {
+      title: "Packaging Discussion",
+      description: "Packaging needs are reviewed according to product, volume and destination.",
+      icon: Package
+    },
+    {
+      title: "Supply Coordination",
+      description: "Order and dispatch terms are confirmed clearly before supply arrangements proceed.",
+      icon: TrendingUp
+    },
+    {
+      title: "Buyer-Focused Service",
+      description: "Importers, distributors and commercial buyers receive requirement-led communication.",
+      icon: Handshake
     }
   ];
+
+  const trustValues = [
+    { title: "Packaging Options", icon: Package },
+    { title: "Quality Alignment", icon: ShieldCheck },
+    { title: "Commercial Quotations", icon: FileText },
+    { title: "Supply Coordination", icon: Handshake },
+    { title: "International B2B Focus", icon: Globe2 },
+  ];
+
+  const featuredProductIds = [
+    "garlic-powder",
+    "onion-powder",
+    "red-chilli-powder",
+    "tomato-powder",
+    "ginger-powder",
+    "masala-spice-blends",
+  ];
+  const featuredProducts = featuredProductIds
+    .map((id) => siteConfig.products.find((product) => product.id === id))
+    .filter((product): product is (typeof siteConfig.products)[number] => Boolean(product));
+
+  const industries = [
+    { title: "Food Manufacturers", icon: Factory },
+    { title: "Importers & Distributors", icon: Globe2 },
+    { title: "Spice Companies", icon: Building2 },
+    { title: "Agriculture & Food Businesses", icon: Users },
+    { title: "Traders & Wholesalers", icon: Store },
+  ];
+
+  const bulkWhatsAppMessage = "Hello Ashirwad Agro Exports, I am interested in your bulk agro products. Please share product specifications, MOQ and quotation.";
 
   return (
     <div className="w-full overflow-hidden">
@@ -70,21 +111,25 @@ export default function Home() {
           </p>
           <div className="max-w-3xl rounded-2xl border border-white/10 bg-secondary/90 p-6 shadow-2xl sm:p-8 md:p-10 reveal">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-white leading-[1.15] mb-6">
-              Premium Indian Agricultural Products for Global Markets
+              Premium Indian Agro Products for Global Buyers
             </h1>
-            
-            <p className="text-lg md:text-xl text-white/90 mb-10 max-w-2xl leading-relaxed font-light">
-              Reliable sourcing, quality-focused supply and professional export solutions for international B2B buyers.
+
+            <p className="mb-4 text-sm font-semibold uppercase leading-relaxed tracking-[0.12em] text-primary-foreground sm:text-base">
+              Bulk Supply Discussions • Buyer-Aligned Specifications • Packaging Options • International B2B Focus
+            </p>
+
+            <p className="text-base md:text-lg text-white/90 mb-8 max-w-2xl leading-relaxed font-light">
+              Ashirwad Agro Exports supplies Indian agro products to importers, distributors, food manufacturers and agricultural businesses seeking commercial supply discussions.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact">
                 <Button size="lg" className="h-14 px-8 text-lg font-bold w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 border-none">
-                  Request a Quote
+                  Get Bulk Quote
                 </Button>
               </Link>
               <a
-                href={`https://wa.me/${siteConfig.whatsapp.primary.replace(/\D/g, '')}?text=${encodeURIComponent(siteConfig.whatsapp.generalMessage)}`}
+                href={`https://wa.me/${siteConfig.whatsapp.primary.replace(/\D/g, '')}?text=${encodeURIComponent(bulkWhatsAppMessage)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackConversion("product_whatsapp_click", { source: "home_hero" })}
@@ -98,12 +143,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Trust Values */}
+      <section className="border-b bg-background py-8">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-5">
+            {trustValues.map(({ title, icon: Icon }) => (
+              <div key={title} className="flex min-h-20 items-center gap-3 rounded-xl border border-border/60 bg-card px-4 py-3 shadow-sm">
+                <Icon className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
+                <span className="text-sm font-semibold leading-snug text-secondary">{title}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-24 bg-muted/30 border-y">
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
             <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-secondary">Why Choose Us</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-secondary">Why Choose Ashirwad Agro Exports?</h2>
               <p className="text-lg text-muted-foreground">
                 We center our operations on understanding your specific commercial reality, focusing on clear communication and alignment.
               </p>
@@ -115,7 +174,7 @@ export default function Home() {
             </Link>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, idx) => (
               <div key={idx} className="bg-card p-8 rounded-xl border border-border/50 shadow-sm reveal hover:-translate-y-1 transition-all duration-300" style={{ transitionDelay: `${idx * 100}ms` }}>
                 <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
@@ -136,7 +195,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
             <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-secondary">Our Core Export Products</h2>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-secondary">Our Export Products</h2>
               <p className="text-lg text-muted-foreground">
                 Dehydrated vegetable powders, moringa, and Indian spices available for requirement discussion.
               </p>
@@ -148,8 +207,8 @@ export default function Home() {
             </Link>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {siteConfig.products.slice(0, 4).map((product, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredProducts.map((product, idx) => (
               <div key={product.id} className="group bg-card rounded-xl border border-border/50 overflow-hidden hover:shadow-md transition-all reveal h-full flex flex-col" style={{ transitionDelay: `${idx * 100}ms` }}>
                 <Link href={`/products/${product.slug}`} className="flex flex-1 flex-col">
                   <div className="aspect-[4/3] overflow-hidden relative bg-muted">
@@ -171,8 +230,30 @@ export default function Home() {
                   </div>
                 </Link>
                 <div className="p-6 pt-0">
-                  <ProductWhatsAppActions productName={product.name} compact />
+                  <ProductWhatsAppActions productName={product.name} compact primaryLabel="Request Bulk Price" />
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries We Serve */}
+      <section className="border-y bg-muted/30 py-20">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="mx-auto mb-12 max-w-3xl text-center reveal">
+            <h2 className="mb-4 font-serif text-3xl font-bold text-secondary md:text-4xl">Industries We Serve</h2>
+            <p className="text-lg text-muted-foreground">
+              Commercial enquiries are welcomed from buyers across food, spice, distribution and agricultural sectors.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {industries.map(({ title, icon: Icon }) => (
+              <div key={title} className="rounded-xl border border-border/60 bg-card p-6 text-center shadow-sm reveal">
+                <div className="mx-auto mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10">
+                  <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                </div>
+                <h3 className="font-semibold leading-snug text-secondary">{title}</h3>
               </div>
             ))}
           </div>
@@ -219,6 +300,21 @@ export default function Home() {
                 View Full Export Process
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* B2B Enquiry */}
+      <section className="bg-muted/30 py-24">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="mx-auto mb-12 max-w-3xl text-center reveal">
+            <h2 className="mb-4 font-serif text-3xl font-bold text-secondary md:text-5xl">Looking for a Reliable Indian Agro Supplier?</h2>
+            <p className="text-lg text-muted-foreground">
+              Share your product, quantity, destination and packaging requirements for a commercial supply discussion.
+            </p>
+          </div>
+          <div className="mx-auto max-w-5xl reveal">
+            <QuoteForm submitLabel="Send Bulk Enquiry" />
           </div>
         </div>
       </section>
@@ -283,7 +379,7 @@ export default function Home() {
               </Button>
             </Link>
             <a
-              href={`https://wa.me/${siteConfig.whatsapp.primary.replace(/\D/g, '')}?text=${encodeURIComponent(siteConfig.whatsapp.generalMessage)}`}
+                href={`https://wa.me/${siteConfig.whatsapp.primary.replace(/\D/g, '')}?text=${encodeURIComponent(bulkWhatsAppMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackConversion("product_whatsapp_click", { source: "home_cta" })}

@@ -33,9 +33,10 @@ type QuoteFormValues = z.infer<typeof quoteFormSchema>;
 interface QuoteFormProps {
   preselectedProduct?: string;
   className?: string;
+  submitLabel?: string;
 }
 
-export function QuoteForm({ preselectedProduct, className = "" }: QuoteFormProps) {
+export function QuoteForm({ preselectedProduct, className = "", submitLabel = "Request My Quote" }: QuoteFormProps) {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStartedAt] = useState(() => Date.now());
@@ -269,7 +270,7 @@ export function QuoteForm({ preselectedProduct, className = "" }: QuoteFormProps
           {isSubmitting ? (
             <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Submitting Request...</>
           ) : (
-            "Request My Quote"
+            submitLabel
           )}
         </Button>
       </form>

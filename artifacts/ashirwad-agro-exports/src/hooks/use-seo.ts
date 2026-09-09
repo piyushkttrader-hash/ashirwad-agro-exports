@@ -10,7 +10,9 @@ export function useSEO({ title, description, canonical }: SEOProps) {
   useEffect(() => {
     const siteOrigin = window.location.origin;
     // Update title
-    document.title = `${title} | Ashirwad Agro Exports`;
+    document.title = title.includes("Ashirwad Agro Exports")
+      ? title
+      : `${title} | Ashirwad Agro Exports`;
 
     // Update meta description
     if (description) {

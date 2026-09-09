@@ -1,0 +1,110 @@
+Upgrade my existing Aashirwad Agro Exports website into a professional international B2B agro-export website.
+
+IMPORTANT:
+- Do not change my domain, DNS, hosting, or deployment settings.
+- Do not remove any existing working functionality.
+- Keep the website fast, mobile responsive, clean and professional.
+- Make all changes directly in the existing project.
+
+HOMEPAGE:
+
+1. Create a strong hero section:
+Headline:
+"Premium Indian Agro Products for Global Buyers"
+
+Subheadline:
+"Reliable Bulk Supply • Export-Ready Quality • Competitive Pricing • Worldwide Shipping"
+
+Add a short description:
+"Aashirwad Agro Exports supplies quality Indian agro products to importers, distributors, food manufacturers and agricultural businesses worldwide."
+
+Add two prominent buttons:
+"Get Bulk Quote"
+"WhatsApp Us"
+
+2. Add a trust/value section with:
+- Export-Ready Packaging
+- Consistent Quality
+- Competitive Bulk Pricing
+- Reliable Supply
+- Worldwide Shipping
+
+3. Add a "Our Export Products" section with professional cards for:
+- Garlic Powder
+- Onion Powder
+- Red Chilli Powder
+- Turmeric Powder
+- Cow Dung Powder
+- Garam Masala
+
+Each product card should have:
+- Product image
+- Short description
+- "Request Bulk Price" button
+
+4. Add a "Why Choose Aashirwad Agro Exports?" section explaining:
+- Direct sourcing
+- Quality-focused processing
+- Hygienic handling
+- Export-grade packaging
+- Reliable supply
+- Customer-focused service
+
+5. Add a B2B buyer enquiry section:
+Heading:
+"Looking for a Reliable Indian Agro Supplier?"
+
+Fields:
+- Product
+- Required Quantity
+- Destination Country
+- Buyer Name
+- Company Name
+- WhatsApp Number
+- Email
+- Message
+
+Button:
+"Send Bulk Enquiry"
+
+6. Add a prominent WhatsApp enquiry button that opens WhatsApp with a pre-filled message:
+"Hello Aashirwad Agro Exports, I am interested in your bulk agro products. Please share product specifications, MOQ and quotation."
+
+7. Add an "Industries We Serve" section:
+- Food Manufacturers
+- Importers & Distributors
+- Spice Companies
+- Agriculture & Organic Farming
+- Traders & Wholesalers
+
+8. Improve the footer:
+Include:
+Aashirwad Agro Exports
+Indian Agro Products Supplier & Exporter
+
+Quick Links:
+Home | About | Products | Contact
+
+Add social media links if they already exist.
+
+9. SEO:
+Update the page title and meta description for international B2B buyers.
+
+Title:
+"Aashirwad Agro Exports | Indian Agro Products Supplier & Exporter"
+
+Meta description:
+"Buy premium Indian agro products in bulk from Aashirwad Agro Exports. Garlic powder, onion powder, red chilli, turmeric, cow dung powder and spices. Reliable supply and competitive export pricing."
+
+10. Make the entire website look like a genuine international export company:
+- Clean white layout
+- Premium agricultural imagery
+- Professional typography
+- Strong but simple CTA buttons
+- Mobile-first responsive design
+- No unnecessary animations
+- No fake certifications
+- Do not claim ISO, HACCP, FDA, organic certification or other certifications unless they already exist in the project.
+
+Before making changes, inspect the existing project structure and preserve the current product information and working pages.
+After completing the changes, run/build the project and fix any errors.

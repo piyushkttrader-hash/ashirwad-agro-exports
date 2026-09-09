@@ -5,13 +5,14 @@ import { trackConversion } from "@/lib/tracking";
 interface ProductWhatsAppActionsProps {
   productName: string;
   compact?: boolean;
+  primaryLabel?: string;
 }
 
 function whatsappUrl(number: string, message: string) {
   return `https://wa.me/${number.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
 }
 
-export function ProductWhatsAppActions({ productName, compact = false }: ProductWhatsAppActionsProps) {
+export function ProductWhatsAppActions({ productName, compact = false, primaryLabel = "Enquire on WhatsApp" }: ProductWhatsAppActionsProps) {
   return (
     <div className={compact ? "space-y-3" : "space-y-4"}>
       <a
@@ -22,7 +23,7 @@ export function ProductWhatsAppActions({ productName, compact = false }: Product
         className="flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-[#25D366] px-4 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#20bd5a]"
       >
         <MessageCircle className="h-5 w-5" aria-hidden="true" />
-        Enquire on WhatsApp
+        {primaryLabel}
       </a>
 
       <div className="border-t border-border/60 pt-3 text-center">
