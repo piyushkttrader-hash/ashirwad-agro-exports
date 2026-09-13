@@ -7,11 +7,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { useToast } from '@/hooks/use-toast';
 import { siteConfig } from '@/config';
 import { Loader2 } from 'lucide-react';
-import { useSubmitQuote } from '@workspace/api-client-react';
-import { trackConversion } from '@/lib/tracking';
 
 const quoteFormSchema = z.object({
   fullName: z.string().min(2, "Full name is required"),
@@ -25,7 +22,6 @@ const quoteFormSchema = z.object({
   targetPrice: z.string().optional(),
   deliveryLocation: z.string().min(2, "Delivery location is required"),
   message: z.string().optional(),
-  honeypot: z.string().max(0, "Spam detected"), // simple honeypot
 });
 
 type QuoteFormValues = z.infer<typeof quoteFormSchema>;
@@ -37,10 +33,11 @@ interface QuoteFormProps {
 }
 
 export function QuoteForm({ preselectedProduct, className = "", submitLabel = "Request My Quote" }: QuoteFormProps) {
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formStartedAt] = useState(() => Date.now());
-  const submitQuote = useSubmitQuote();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xdeorood";
 
   const form = useForm<QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
@@ -49,69 +46,83 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
       companyName: "",
       email: "",
       phone: "",
-      country: "Kenya",
+      country: "",
       productInterest: preselectedProduct || "",
       requiredQuantity: "",
       packaging: "",
       targetPrice: "",
       deliveryLocation: "",
       message: "",
-      honeypot: "",
     },
   });
 
   async function onSubmit(data: QuoteFormValues) {
     setIsSubmitting(true);
+    setErrorMessage("");
 
     try {
-      const receipt = await submitQuote.mutateAsync({
-        data: {
-          ...data,
-          targetPrice: data.targetPrice || undefined,
-          message: data.message || undefined,
-          formStartedAt,
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
+        body: JSON.stringify({
+          "Buyer Name": data.fullName,
+          "Company": data.companyName,
+          "Email": data.email,
+          "Phone / WhatsApp": data.phone,
+          "Country": data.country,
+          "Delivery Port / City": data.deliveryLocation,
+          "Product": data.productInterest,
+          "Quantity": data.requiredQuantity,
+          "Packaging": data.packaging,
+          "Target Price": data.targetPrice || "N/A",
+          "Message": data.message || "N/A",
+        }),
       });
 
-      toast({
-        title: "Quote Request Sent Successfully",
-        description: receipt.message,
-      });
-      trackConversion("quote_form_submit", { product_name: data.productInterest });
-
-      form.reset({
-        ...form.getValues(),
-        message: "",
-        targetPrice: "",
-        honeypot: "",
-      });
+      if (response.ok) {
+        setIsSuccess(true);
+        form.reset();
+      } else {
+        const resData = await response.json();
+        setErrorMessage(resData.error || "Submission failed. Please try again.");
+      }
     } catch {
-      toast({
-        variant: "destructive",
-        title: "Quote Request Not Sent",
-        description: "We couldn't deliver your request. Your details are still here—please try again shortly.",
-      });
+      setErrorMessage("Network error. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   }
 
+  if (isSuccess) {
+    return (
+      <div className="bg-emerald-50 border border-emerald-300 p-8 rounded-xl text-center space-y-4 shadow-sm">
+        <h3 className="text-2xl font-bold text-emerald-800">Quote Request Received!</h3>
+        <p className="text-emerald-700">
+          Thank you. Your enquiry has been forwarded to our sales team. We will get back to you shortly.
+        </p>
+        <Button 
+          onClick={() => setIsSuccess(false)} 
+          variant="outline" 
+          className="border-emerald-600 text-emerald-700 hover:bg-emerald-100"
+        >
+          Send Another Enquiry
+        </Button>
+      </div>
+    );
+  }
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className={`space-y-6 bg-card p-6 md:p-8 rounded-xl border shadow-sm ${className}`}>
-        
-        {/* Honeypot field (hidden from screen readers and visual users) */}
-        <div className="hidden" aria-hidden="true">
-          <FormField
-            control={form.control}
-            name="honeypot"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl><Input {...field} tabIndex={-1} autoComplete="off" /></FormControl>
-              </FormItem>
-            )}
-          />
-        </div>
+
+        {errorMessage && (
+          <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm font-medium">
+            Error: {errorMessage}
+          </div>
+        )}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
@@ -120,7 +131,7 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Full Name *</FormLabel>
-                <FormControl><Input placeholder="John Doe" {...field} /></FormControl>
+                <FormControl><Input placeholder="Buyer Name" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -131,7 +142,7 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Company Name *</FormLabel>
-                <FormControl><Input placeholder="Your Business Ltd." {...field} /></FormControl>
+                <FormControl><Input placeholder="Company Name" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -145,7 +156,7 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Business Email *</FormLabel>
-                <FormControl><Input type="email" placeholder="john@company.com" {...field} /></FormControl>
+                <FormControl><Input type="email" placeholder="buyer@domain.com" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -156,7 +167,7 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
             render={({ field }) => (
               <FormItem>
                 <FormLabel>WhatsApp / Phone *</FormLabel>
-                <FormControl><Input placeholder="+254 XXX XXX XXX" {...field} /></FormControl>
+                <FormControl><Input placeholder="+91 / +254..." {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -170,7 +181,7 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Country *</FormLabel>
-                <FormControl><Input placeholder="e.g. Kenya, UAE, UK" {...field} /></FormControl>
+                <FormControl><Input placeholder="e.g. Kenya, UAE" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -181,7 +192,7 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Delivery City/Port *</FormLabel>
-                <FormControl><Input placeholder="e.g. Mombasa, Dubai" {...field} /></FormControl>
+                <FormControl><Input placeholder="e.g. Mombasa Port" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -219,7 +230,7 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Required Quantity *</FormLabel>
-                <FormControl><Input placeholder="e.g. 500 kg or your expected order quantity" {...field} /></FormControl>
+                <FormControl><Input placeholder="e.g. 500 MT" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -230,7 +241,7 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Packaging Requirement *</FormLabel>
-                <FormControl><Input placeholder="e.g. 25kg PP bags, Custom" {...field} /></FormControl>
+                <FormControl><Input placeholder="e.g. 50kg Bags" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -241,7 +252,7 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Target Price (Optional)</FormLabel>
-                <FormControl><Input placeholder="Optional target price or budget guidance" {...field} /></FormControl>
+                <FormControl><Input placeholder="Target Price" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
@@ -256,7 +267,7 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
               <FormLabel>Additional Requirements / Specifications</FormLabel>
               <FormControl>
                 <Textarea 
-                  placeholder="Tell us about your specific grade requirements, certifications needed, or other details..." 
+                  placeholder="Mention quality, specifications..." 
                   className="min-h-[100px]" 
                   {...field} 
                 />
@@ -268,7 +279,7 @@ export function QuoteForm({ preselectedProduct, className = "", submitLabel = "R
 
         <Button type="submit" className="w-full text-lg font-semibold h-12" disabled={isSubmitting}>
           {isSubmitting ? (
-            <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Submitting Request...</>
+            <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Submitting...</>
           ) : (
             submitLabel
           )}
