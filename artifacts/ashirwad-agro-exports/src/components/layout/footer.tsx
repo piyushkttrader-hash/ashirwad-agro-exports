@@ -95,11 +95,11 @@ export function Footer() {
               <li className="flex gap-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
                 <a
-                  href="mailto:piyushkttrader@gmail.com"
+                  href="mailto:sales@aashirwadagroexports.com"
                   onClick={() => trackConversion("email_click", { source: "footer" })}
                   className="min-w-0 break-all text-sm font-medium text-muted/90 underline decoration-white/25 underline-offset-4 transition-[color,opacity,transform,text-decoration-color] duration-150 hover:text-white hover:decoration-primary active:scale-[0.98] active:opacity-75"
                 >
-                  piyushkttrader@gmail.com
+                  sales@aashirwadagroexports.com
                 </a>
               </li>
             </ul>
