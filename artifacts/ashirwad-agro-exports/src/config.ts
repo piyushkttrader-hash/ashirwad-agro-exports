@@ -10,9 +10,9 @@ export const siteConfig = {
   logo: "/company-logo.webp",
   description: "Premium Indian Agricultural Products for Global Markets. B2B bulk supply of ingredients and spices.",
   contact: {
-    email: "",
-    phone: "", 
-    address: "",
+    email: "sales@aashirwadagroexports.com",
+    phone: "+919739469814", 
+    address: "Mama Bhanja Ka Talab, Rewa Road, Prayagraj, Uttar Pradesh - 211008, India",
   },
   whatsapp: {
     primary: "+919739469814",
