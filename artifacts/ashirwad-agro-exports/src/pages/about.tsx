@@ -150,6 +150,79 @@ export default function About() {
           </div>
         </div>
       </section>
+      {/* EXPORT CERTIFICATIONS SECTION */}
+      <section className="py-14 bg-slate-50 border-t border-slate-200">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+      <div className="text-center max-w-2xl mx-auto mb-10">
+      <span className="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
+      Statutory Accreditations
+      </span>
+      <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+      Export Certifications & Quality Compliance
+      </h2>
+      <p className="mt-2 text-xs sm:text-sm text-slate-600">
+      Aashirwad Agro Exports adheres strictly to Indian trade regulations, phytosanitary standards, and global food safety protocols.
+      </p>
+      </div>
+      ​<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {/* 1. IEC */}
+      <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div className="flex items-center justify-between mb-2">
+      <span className="text-xs font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
+      DGFT INDIA
+      </span>
+      <span className="text-[11px] font-semibold text-emerald-600">✓ Govt. Registered</span>
+      </div>
+      <h3 className="text-base font-bold text-slate-900">Import Export Code (IEC)</h3>
+      <p className="text-xs text-slate-600 mt-1">
+      Authorized commercial exporter code issued by DGFT for overseas ocean shipments.
+      </p>
+      </div>
+      ​{/* 2. APEDA */}
+      <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div className="flex items-center justify-between mb-2">
+      <span className="text-xs font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
+      APEDA RCMC
+      </span>
+      <span className="text-[11px] font-semibold text-emerald-600">✓ Verified Exporter</span>
+      </div>
+      <h3 className="text-base font-bold text-slate-900">APEDA Compliance</h3>
+      <p className="text-xs text-slate-600 mt-1">
+      Statutory accreditation for processed agro products, dehydrated onion, and garlic.
+      </p>
+      </div>
+      ​{/* 3. Spices Board */}
+      <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div className="flex items-center justify-between mb-2">
+      <span className="text-xs font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
+      SPICES BOARD
+      </span>
+      <span className="text-[11px] font-semibold text-emerald-600">✓ CRES Certified</span>
+      </div>
+      <h3 className="text-base font-bold text-slate-900">Spices Board of India</h3>
+      <p className="text-xs text-slate-600 mt-1">
+      Mandatory export license and phytosanitary alignment for Indian whole & ground spices.
+      </p>
+      </div>
+      ​{/* 4. FSSAI */}
+      <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+      <div className="flex items-center justify-between mb-2">
+      <span className="text-xs font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded border border-emerald-200">
+      FOOD SAFETY
+      </span>
+      <span className="text-[11px] font-semibold text-emerald-600">✓ Safe Grade</span>
+      </div>
+      <h3 className="text-base font-bold text-slate-900">FSSAI Compliance</h3>
+      <p className="text-xs text-slate-600 mt-1">
+      Stringent hygienic processing, zero adulteration, safe moisture, and food-grade packaging.
+      </p>
+      </div>
+      </div>
+      ​<div className="mt-6 p-4 rounded-lg bg-emerald-950 text-white text-xs flex items-center justify-between">
+      <span>Official certificate copies & pre-shipment lab reports provided upon formal inquiry.</span>
+      </div>
+      </div>
+      </section>
     </div>
   );
 }
