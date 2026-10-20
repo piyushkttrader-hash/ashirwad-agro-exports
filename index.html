@@ -7,20 +7,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* अपडेटेड: इंडियन एग्रो नेचर थीम बैकग्राउंड */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
+            background: linear-gradient(180deg, #f4f9f4 0%, #fdfbf7 50%, #ebf5eb 100%);
+            background-image: 
+                radial-gradient(#15803d 0.5px, transparent 0.5px), 
+                radial-gradient(#ca8a04 0.5px, #f7fee7 0.5px);
+            background-size: 24px 24px;
+            background-position: 0 0, 12px 12px;
+            background-attachment: fixed;
+            color: #1e293b;
         }
+
+        /* अपडेटेड: असली खेत की फोटो वाला हीरो बैनर */
         .header {
-            background-color: #0d3b2e;
+            background: linear-gradient(rgba(13, 59, 46, 0.85), rgba(20, 83, 45, 0.85)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
             color: #fff;
             text-align: center;
-            padding: 25px 15px;
+            padding: 40px 15px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            border-bottom: 4px solid #f9d342; /* सुनहरी फसल वाली बॉर्डर लाइन */
         }
+
         .logo-img {
             max-width: 130px;
             height: auto;
@@ -107,30 +121,42 @@
             color: #333;
             width: 40%;
         }
+
+        /* अपडेटेड: हिलने और चमकने वाला एनिमेटेड व्हाट्सएप बटन */
         .whatsapp-btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #25D366;
-            color: white;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white !important;
             text-align: center;
             padding: 16px;
             font-size: 18px;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 50px; /* गोल और प्रीमियम लुक के लिए */
             margin-top: 20px;
-            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            border: 2px solid #ffffff;
+            animation: pulse-shake 2.5s infinite; /* एनिमेशन चालू */
+            transition: transform 0.2s ease-in-out;
         }
         .whatsapp-btn i {
             font-size: 26px;
             margin-right: 10px;
         }
         .whatsapp-btn:hover {
-            background-color: #1ebe5d;
-            transform: translateY(-2px);
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
         }
+        @keyframes pulse-shake {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            10%, 30% { transform: scale(1.03) rotate(-2deg); }
+            20%, 40% { transform: scale(1.03) rotate(2deg); }
+            50% { transform: scale(1.03) rotate(0deg); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -186,7 +212,7 @@
 
         <!-- Product 2: Rice Bran -->
         <div class="product-card">
-            <!-- आपकी अपलोड की गई राइस ब्रान की फोटो -->
+            <!-- आपकी अपलोड की गई राइस ব্রान की फोटो -->
             <img src="rice bran.png" alt="Rice Bran Animal Feed" class="product-image">
             <div class="product-content">
                 <h2 class="product-title">রাইস ব্রান <span>(Premium Rice Bran Extract)</span></h2>
@@ -205,42 +231,29 @@
                 </a>
             </div>
         </div>
-    </div>
-            <!-- Product 3: Mustard Oil Meal -->
-    <div class="product-card">
-        <img src="mustard.png" alt="Mustard Oil Meal Animal Feed" class="product-image">
-        <div class="product-content">
-            <h2 class="product-title">সরিষার খৈল <span>(Premium Mustard Oil Meal / Cake)</span></h2>
-            <p style="font-size: 15px; color: #555;">Highly nutritious mustard oil meal (Rapeseed Meal), rich in protein, excellent for cattle and poultry feed.</p>
-            
-            <table class="specs-table">
-                <tr>
-                    <th>Protein (প্রোটিন)</th>
-                    <td>Min 36% to 38%</td>
-                </tr>
-                <tr>
-                    <th>Moisture (আর্দ্রতা)</th>
-                    <td>Max 10%</td>
-                </tr>
-                <tr>
-                    <th>Crude Fiber (ফাইবার)</th>
-                    <td>Max 12%</td>
-                </tr>
-                <tr>
-                    <th>Sand & Silica (বালি ও সিলিকা)</th>
-                    <td>Max 2.5%</td>
-                </tr>
-                <tr>
-                    <th>Oil Content (তেল)</th>
-                    <td>Max 1.5%</td>
-                </tr>
-            </table>
-            
-                        <a href="https://wa.me/919739469814?text=Hello%20Aashirwad%20Agro%20Exports,%20I%20am%20interested%20in%20Mustard%20Oil%20Meal%20CFR%20Bangladesh" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> Get Latest Price on WhatsApp
-            </a>
+    
+        <!-- Product 3: Mustard Oil Meal -->
+        <div class="product-card">
+            <img src="mustard.png" alt="Mustard Oil Meal Animal Feed" class="product-image">
+            <div class="product-content">
+                <h2 class="product-title">সরিষার খৈল <span>(Premium Mustard Oil Meal / Cake)</span></h2>
+                <p style="font-size: 15px; color: #555;">Highly nutritious mustard oil meal (Rapeseed Meal), rich in protein, excellent for cattle and poultry feed.</p>
+                
+                <table class="specs-table">
+                    <tr><th>Protein (প্রোটিন)</th><td>Min 36% to 38%</td></tr>
+                    <tr><th>Moisture (আর্দ্রতা)</th><td>Max 10%</td></tr>
+                    <tr><th>Crude Fiber (ফাইবার)</th><td>Max 12%</td></tr>
+                    <tr><th>Sand & Silica (বালি ও সিলিকা)</th><td>Max 2.5%</td></tr>
+                    <tr><th>Oil Content (তেল)</th><td>Max 1.5%</td></tr>
+                </table>
+                
+                <a href="https://wa.me/919739469814?text=Hello%20Aashirwad%20Agro%20Exports,%20I%20am%20interested%20in%20Mustard%20Oil%20Meal%20CFR%20Bangladesh" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i> Get Latest Price on WhatsApp
+                </a>
+            </div>
         </div>
-    </div>
+    </div> <!-- Container End -->
+
     <!-- About Us / Trust Building Section -->
     <div style="background-color: #ffffff; padding: 30px 20px; margin: 30px auto 10px auto; max-width: 800px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #0d3b2e;">
         <h2 style="color: #0d3b2e; font-size: 22px; margin-bottom: 15px;">Why Choose Aashirwad Agro Exports?</h2>
@@ -256,7 +269,7 @@
     </div>
 
     <!-- Main Website Link & Global Trust Badge -->
-    <div style="text-align: center; margin: 40px 0px 50px 0px; background-color: #f8fafc; padding: 30px 20px; border-radius: 12px; border: 1px dashed #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
+    <div style="text-align: center; margin: 40px auto 50px auto; max-width: 800px; background-color: #f8fafc; padding: 30px 20px; border-radius: 12px; border: 1px dashed #cbd5e1; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
         <p style="color: #b45309; font-size: 14px; font-weight: 800; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">
             🌍 Trusted by B2B Buyers Across Multiple Countries
         </p>
@@ -277,4 +290,7 @@
     </div>
 
 </body>
-</html>  
+</html>
+
+        
+            
